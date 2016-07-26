@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :users do
       post 'authenticate', to: 'pre_sign_in#create', on: :collection
     end
+
+    resources :places, only: [:index, :show]
   end
 end
