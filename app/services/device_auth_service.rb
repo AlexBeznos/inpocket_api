@@ -1,4 +1,4 @@
-class PreSignInService
+class DeviceAuthService
   alias :read_attribute_for_serialization :send
   attr_reader :id, :errors, :user, :device
 
@@ -19,6 +19,7 @@ class PreSignInService
   end
 
   private
+
   def save_user_and_device
     @device.transaction do
       @user.save!

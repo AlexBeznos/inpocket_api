@@ -1,4 +1,4 @@
-class PreSignInServiceSerializer < ActiveModel::Serializer
+class DeviceAuthServiceSerializer < ActiveModel::Serializer
   attributes :device, :user
 
   def device
