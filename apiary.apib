@@ -7,12 +7,22 @@ HOST: http://api-inpocket.herokuapp.com/
 ### Device authentication [POST /v1/devices/authenticate]
 Action for device authentication after first application boot.
 
++ Parameters
+    + platform: `ios` (enum[string], required)
+
+      + Members
+          + `ios`
+          + `android`
+          + `web`
+    + push_token (string, required) - specific token for push notifications
+  
 + Request (application/json)
 
         {
             "platform": "ios",
             "push_token": "ce8be627 2e43e855 16033e24 b4c28922 0eeda487 9c477160 b2545e95 b68b5969"
         }
+
 + Response 200 (application/json)
 
         {
