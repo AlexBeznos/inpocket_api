@@ -3,12 +3,13 @@ HOST: http://api-inpocket.herokuapp.com/
 
 # inPocket API
 
+## Device authentication [/v1/devices/authenticate]
 
-### Device authentication [POST /v1/devices/authenticate]
+### POST [POST]
 Action for device authentication after first application boot.
 
-+ Parameters
-    + platform: `ios` (enum[string], required)
++ Attributes
+    + platform  (enum[string], required)
 
       + Members
           + `ios`
@@ -37,38 +38,66 @@ Action for device authentication after first application boot.
             }
         }
 
-## Places Collection [/places{?q}]
-Provides access to all places.
+## Place [/v1/places/{id}]
+
++ Parameters
+    + id (number)
 
 + Model (application/json)
 
-    JSON representation of products.
+    JSON representation of place.
 
     + Body
-
+    
             {
-            "id": "1",
-            "name": "Product One",
-            "description": "This is the full description of the product.",
-            "url": "http://example.com",
-            "image": "http://example.com/image.jpg",
-            "thumbnailUrl": "http://example.com/image-thumb.jpg",
-            "keywords": "western, cowboy",
-            "brand": "Brand Name",
-            "color": "Black",
-            "itemCondition": "New",
-            "manufacturer": "Manufacturer Name",
-            "model": "Black",
-            "sku": "SKU #",
-            "weight": "12 pounds",
-            "width": "12 inches",
-            "height": "12 inches",
-            "depth": "12 inches"
+                "id": 2,
+                "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+                "name": "Vapiano",
+                "address": "Червоноармiйська-Бассейна 1-3/2 Киев",
+                "phones": [],
+                "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+                "images": [],
+                "lng": "30.5234",
+                "lat": "50.4501"
             }
 
-### List All Products [GET]
-+ Parameters
-    + q (optional, string) ... Keyword query to search for products.
+### GET
++ Response 200
+
+    [Place][]
+
+## Places Collection [/v1/places]
+
++ Model (application/json)
+
+    JSON representation of places.
+
+    + Body
+    
+            [{
+                "id": 2,
+                "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+                "name": "Vapiano",
+                "address": "Червоноармiйська-Бассейна 1-3/2 Киев",
+                "phones": [],
+                "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+                "images": [],
+                "lng": "30.5234",
+                "lat": "50.4501"
+            },
+            {
+                "id": 3,
+                "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+                "name": "Vapiano",
+                "address": "Червоноармiйська-Бассейна 1-3/2 Kyiv",
+                "phones": [],
+                "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+                "images": [],
+                "lng": "30.5234",
+                "lat": "50.4501"
+            }]
+
+### GET
 
 + Response 200
 
