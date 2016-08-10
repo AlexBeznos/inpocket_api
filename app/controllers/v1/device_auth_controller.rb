@@ -1,5 +1,6 @@
 module V1
   class DeviceAuthController < ApplicationController
+    skip_before_action :authenticate!
 
     def create
       @auth = DeviceAuthService.new(sign_in_params)
