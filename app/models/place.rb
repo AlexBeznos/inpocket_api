@@ -4,6 +4,7 @@ class Place < ApplicationRecord
 
   has_many :beacons, dependent: :destroy
   has_many :presents, dependent: :destroy
+  has_many :shares, dependent: :destroy
 
   acts_as_mappable :default_units => :kms,
                    :auto_geocode => {

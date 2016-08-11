@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :places, only: [:index, :show] do
       resources :beacons, only: [:index]
       resources :presents, only: [:index]
+      resources :shares, only: [:index]
     end
 
     resources :devices, only: [] do
