@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :places, only: [:index, :show] do
       resources :beacons, only: [:index]
+      resources :presents, only: [:index]
     end
-    
+
     resources :devices, only: [] do
       post 'authenticate', to: 'device_auth#create', on: :collection
     end
