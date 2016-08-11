@@ -10,6 +10,7 @@ gem 'puma', '~> 3.0'
 gem 'pundit'
 gem 'active_model_serializers'
 gem 'geokit-rails'
+gem 'default_value_for'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
