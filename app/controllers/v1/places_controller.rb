@@ -3,13 +3,13 @@ module V1
     def index
       @places = Place.all
 
-      render json: @places
+      respond_with @places
     end
 
     def show
       @place = Place.find(params[:id])
 
-      render json: @place
+      respond_with @place
     end
   end
 end

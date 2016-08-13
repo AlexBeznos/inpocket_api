@@ -3,10 +3,10 @@ module V1
     skip_before_action :authenticate!
 
     def create
-      @auth = DeviceAuthService.new(sign_in_params)
+      @auth = DeviceAuthService.new(auth_params)
 
       if @auth.save
-        render json: @auth
+        respond_with @auth.device
       else
         record_invalid @auth.errors
       end
@@ -14,7 +14,7 @@ module V1
 
     private
 
-    def sign_in_params
+    def auth_params
       params.require(:device).permit(:platform, :push_token)
     end
   end

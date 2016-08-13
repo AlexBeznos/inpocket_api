@@ -3,7 +3,7 @@ module V1
     def index
       @presents = Place.find(params[:place_id]).presents
 
-      render json: @presents
+      respond_with @presents
     end
   end
 end

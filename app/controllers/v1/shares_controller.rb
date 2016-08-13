@@ -3,7 +3,7 @@ module V1
     def index
       @shares = Place.find(params[:place_id]).shares
 
-      render json: @shares
+      respond_with @shares
     end
   end
 end

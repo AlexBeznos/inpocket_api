@@ -1,8 +1,14 @@
-class ApplicationController < ActionController::API
+require "application_responder"
+
+class ApplicationController < ActionController::Base
+  self.responder = ApplicationResponder
+
   include Authenticatable
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::ParameterMissing, with: :parameter_missing
+
+  respond_to :json
 
   protected
 
