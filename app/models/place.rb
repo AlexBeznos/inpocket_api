@@ -1,4 +1,6 @@
 class Place < ApplicationRecord
+  include Colorable
+  colorate :color
   serialize :phones, Array
   serialize :images, Array
 
