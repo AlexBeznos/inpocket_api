@@ -15,4 +15,5 @@ class Place < ApplicationRecord
                   }
 
   validates :name, :description, :logo, :address, presence: true
+  validates :color, inclusion: { in: Colorable::COLORS.keys }
 end
