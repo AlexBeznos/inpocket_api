@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :beacon do
-    uuid "MyString"
+    association :place
   end
 end

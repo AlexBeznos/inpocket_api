@@ -8,7 +8,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
 gem 'pundit'
-gem 'geokit-rails'
+gem 'geocoder'
 gem 'default_value_for'
 gem 'rabl-rails'
 gem 'rabl'
@@ -46,6 +46,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'shoulda-matchers', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

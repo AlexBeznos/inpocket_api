@@ -8,11 +8,7 @@ class Place < ApplicationRecord
   has_many :presents, dependent: :destroy
   has_many :shares, dependent: :destroy
 
-  acts_as_mappable :default_units => :kms,
-                   :auto_geocode => {
-                    :field => :address,
-                    :error_message =>'Could not geocode address'
-                  }
+  geocoded_by :address, latitude: :lat, longitude: :lng
 
   validates :name, :description, :logo, :address, presence: true
   validates :color, inclusion: { in: Colorable::COLORS.keys }

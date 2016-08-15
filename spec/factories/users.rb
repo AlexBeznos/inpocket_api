@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do
-    first_name "MyString"
-    last_name "MyString"
-    type false
-    photo "MyString"
+    first_name { Faker::Name.last_name }
+    last_name { Faker::Name.first_name }
+    signed true
+    photo { "http://url.url" } # TODO: add carrierwave
   end
 end

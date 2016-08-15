@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :share do
-    name "MyString"
-    image "MyString"
-    description "MyText"
-    place_id 1
+    name { Faker::Lorem.word }
+    image { "http://user.ur" } # TODO: add carrierwave
+    description { Faker::Lorem.sentence }
+    association :place
   end
 end
