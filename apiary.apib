@@ -231,3 +231,44 @@ Action for device authentication after first application boot.
 + Response 200
 
     [Shares Collection][]
+
+## Menu Category Collection [/v1/places/{place_id}/menu_categories]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+
++ Model (application/json)
+
+    JSON representation of shares.
+
+    + Body
+
+        [{
+            "id": 1,
+            "name": "Антипаста"
+        },
+        {
+            "id": 2,
+            "name": "Паста"
+        },
+        {
+            "id": 3,
+            "name": "Пицца"
+        },
+        {
+            "id": 4,
+            "name": "Десерты"
+        },
+        {
+            "id": 5,
+            "name": "Кофе и другое"
+        }]
+
+### GET
+
++ Response 200
+
+    [Menu Category Collection][]

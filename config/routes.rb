@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :beacons, only: [:index]
       resources :presents, only: [:index]
       resources :shares, only: [:index]
+      resources :menu_categories, only: [:index]
     end
 
     resources :devices, only: [] do
