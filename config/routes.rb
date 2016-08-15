@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :devices, only: [] do
       post 'authenticate', to: 'device_auth#create', on: :collection
     end
+
+    resources :users, only: [] do
+      get 'self', to: 'self_users#show', on: :collection
+    end
   end
 end

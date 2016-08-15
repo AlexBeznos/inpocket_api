@@ -39,6 +39,9 @@ Action for device authentication after first application boot.
 + Parameters
     + id (number)
 
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
 + Model (application/json)
 
     JSON representation of place.
@@ -64,7 +67,33 @@ Action for device authentication after first application boot.
 
     [Place][]
 
+## Current User [/v1/users/self]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Model (application/json)
+
+    JSON representation of current user.
+
+    + Body
+
+            {
+                "id": 44,
+                "first_name": null,
+                "last_name": null,
+                "photo": null
+            }
+
+### GET
++ Response 200
+
+    [Current User][]
+
 ## Places Collection [/v1/places]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
 + Model (application/json)
 
@@ -106,6 +135,10 @@ Action for device authentication after first application boot.
     [Places Collection][]
 
 ## Beacons Collection [/v1/places/{place_id}/beacons]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
 + Parameters
     + place_id (number)
 
@@ -126,6 +159,10 @@ Action for device authentication after first application boot.
     [Beacons Collection][]
 
 ## Presents Collection [/v1/places/{place_id}/presents]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
 + Parameters
     + place_id (number)
 
@@ -157,6 +194,10 @@ Action for device authentication after first application boot.
     [Presents Collection][]
 
 ## Shares Collection [/v1/places/{place_id}/shares]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
 + Parameters
     + place_id (number)
 
