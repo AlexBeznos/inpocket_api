@@ -6,6 +6,6 @@ RSpec.describe MenuCategory, type: :model do
   it { is_expected.to validate_presence_of(:place) }
 
   it 'should have valid factory' do
-    expect(build(:beacon)).to be_valid
+    expect(build(:menu_category)).to be_valid
   end
 end

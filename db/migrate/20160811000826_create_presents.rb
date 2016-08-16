@@ -2,7 +2,7 @@ class CreatePresents < ActiveRecord::Migration[5.0]
   def change
     create_table :presents do |t|
       t.string :image
-      t.string :price
+      t.string :price # TODO: change it to decimal
       t.text :description
       t.string :name
       t.integer :place_id

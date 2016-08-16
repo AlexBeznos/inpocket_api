@@ -97,7 +97,7 @@ Action for device authentication after first application boot.
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
 + Parameters
-    + uuid (string, array)
+    + uuid (string | optional)
 
 + Model (application/json)
 
@@ -272,3 +272,82 @@ Action for device authentication after first application boot.
 + Response 200
 
     [Menu Category Collection][]
+
+## Menu Item Collection [/v1/menu_categories/{menu_categories_id}/menu_items]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + menu_categories_id (number)
+
++ Model (application/json)
+
+    JSON representation of shares.
+
+    + Body
+
+        [{
+            "id": 1,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 2,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 3,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 4,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 5,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+        }]
+
+### GET
+
++ Response 200
+
+    [Menu Item Collection][]
+
+## Menu Item [/v1/menu_items/{id}/]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + id (number)
+
++ Model (application/json)
+
+    JSON representation of shares.
+
+    + Body
+
+        {
+          "id": 1,
+          "name": "Паста Песто",
+          "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+          "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+          "price": 65
+        }
+
+### GET
+
++ Response 200
+
+    [Menu Item][]

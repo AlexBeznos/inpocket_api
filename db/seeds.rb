@@ -79,24 +79,60 @@
 #   image: 'http://www.evrasia.spb.ru/public_img/134.jpg',
 #   place_id: 1
 # )
+#
+# MenuCategory.create!(
+#   name: 'Антипаста',
+#   place_id: 1
+# )
+# MenuCategory.create!(
+#   name: 'Паста',
+#   place_id: 1
+# )
+# MenuCategory.create!(
+#   name: 'Пицца',
+#   place_id: 1
+# )
+# MenuCategory.create!(
+#   name: 'Десерты',
+#   place_id: 1
+# )
+# MenuCategory.create!(
+#   name: 'Кофе и другое',
+#   place_id: 1
+# )
 
-MenuCategory.create!(
-  name: 'Антипаста',
-  place_id: 1
+MenuItem.create!(
+  name: 'Паста Песто',
+  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+  price: 65,
+  menu_category_id: 1
 )
-MenuCategory.create!(
-  name: 'Паста',
-  place_id: 1
+MenuItem.create!(
+  name: 'Паста Песто',
+  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+  price: 65,
+  menu_category_id: 1
 )
-MenuCategory.create!(
-  name: 'Пицца',
-  place_id: 1
+MenuItem.create!(
+  name: 'Паста Песто',
+  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+  price: 65,
+  menu_category_id: 1
 )
-MenuCategory.create!(
-  name: 'Десерты',
-  place_id: 1
+MenuItem.create!(
+  name: 'Паста Песто',
+  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+  price: 65,
+  menu_category_id: 1
 )
-MenuCategory.create!(
-  name: 'Кофе и другое',
-  place_id: 1
+MenuItem.create!(
+  name: 'Паста Песто',
+  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+  price: 65,
+  menu_category_id: 1
 )

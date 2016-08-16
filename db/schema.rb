@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815213743) do
+ActiveRecord::Schema.define(version: 20160816093205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20160815213743) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.decimal  "price",            precision: 8, scale: 2
+    t.integer  "menu_category_id"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.index ["menu_category_id"], name: "index_menu_items_on_menu_category_id", using: :btree
   end
 
   create_table "places", force: :cascade do |t|
