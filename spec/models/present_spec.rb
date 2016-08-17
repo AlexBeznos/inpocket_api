@@ -10,4 +10,6 @@ RSpec.describe Present, type: :model do
   it 'should have valid factory' do
     expect(build(:present)).to be_valid
   end
+
+  it 'should update not debut present'
 end

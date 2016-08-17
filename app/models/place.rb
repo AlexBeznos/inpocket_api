@@ -12,4 +12,8 @@ class Place < ApplicationRecord
 
   validates :name, :description, :logo, :address, presence: true
   validates :color, inclusion: { in: Colorable::COLORS.keys }
+
+  def present_received?(user)
+    DebutPresentRelation.exists?(place_id: id, user_id: user.id)
+  end
 end
