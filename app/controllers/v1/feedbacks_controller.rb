@@ -23,7 +23,7 @@ module V1
     private
 
     def feedback_params
-      params.require(:feedback).permit(:content, :image)
+      params.require(:feedback).permit(:content, :image, :stars)
     end
 
     def find_place

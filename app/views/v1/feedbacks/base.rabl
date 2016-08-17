@@ -1,1 +1,1 @@
-attributes :id, :content, :image
+attributes :id, :content, :image, :stars
