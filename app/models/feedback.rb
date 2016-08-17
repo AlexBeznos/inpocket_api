@@ -11,4 +11,8 @@ class Feedback < ApplicationRecord
       errors.add(:user, 'should be signed')
     end
   end
+
+  def created_at_unix
+    created_at.to_time.to_i
+  end
 end
