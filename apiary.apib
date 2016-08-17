@@ -200,6 +200,63 @@ Action for device authentication after first application boot.
 
     [Presents Collection][]
 
+## Present [/v1/places/{place_id}/presents/{id}]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+    + id (number)
+
++ Model (application/json)
+
+    JSON representation of presents.
+
+    + Body
+
+          {
+            "id": 1,
+            "name": "Карбонара",
+            "price": "20",
+            "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+            "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+          }
+
+### GET
+
++ Response 200
+
+    [Present][]
+
+## Debut Present [/v1/places/{place_id}/presents/debut]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+
++ Model (application/json)
+
+    JSON representation of presents.
+
+    + Body
+
+          {
+            "id": 1,
+            "name": "Карбонара",
+            "price": "20",
+            "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+            "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+          }
+
+### GET
+
++ Response 200
+
+    [Debut Present][]
+
 ## Shares Collection [/v1/places/{place_id}/shares]
 
 + Headers
