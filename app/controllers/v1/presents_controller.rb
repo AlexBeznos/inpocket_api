@@ -1,9 +1,19 @@
 module V1
   class PresentsController < ApplicationController
     def index
-      @presents = Place.find(params[:place_id]).presents
+      @presents = Present.where(place_id: params[:place_id]).without_debut
 
       respond_with @presents
+    end
+
+    def show
+      @present = if params[:id] == 'debut'
+        Present.where(place_id: params[:place_id]).find_by(debut: true)
+      else
+        Present.find(params[:debut])
+      end
+
+      respond_with @present
     end
   end
 end

@@ -1,6 +1,8 @@
 class Present < ApplicationRecord
   belongs_to :place
 
+  scope :without_debut, -> { where(debut: false) }
+
   validates :name, :description, :image, :price, presence: true
 
   after_save :update_debutes, if: :debut
