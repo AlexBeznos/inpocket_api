@@ -211,7 +211,7 @@ Action for device authentication after first application boot.
 
 + Model (application/json)
 
-    JSON representation of presents.
+    JSON representation of present.
 
     + Body
 
@@ -239,7 +239,7 @@ Action for device authentication after first application boot.
 
 + Model (application/json)
 
-    JSON representation of presents.
+    JSON representation of present.
 
     + Body
 
@@ -341,7 +341,7 @@ Action for device authentication after first application boot.
 
 + Model (application/json)
 
-    JSON representation of shares.
+    JSON representation of menu item collection.
 
     + Body
 
@@ -392,7 +392,7 @@ Action for device authentication after first application boot.
 
 + Model (application/json)
 
-    JSON representation of shares.
+    JSON representation of menu item.
 
     + Body
 
@@ -409,3 +409,56 @@ Action for device authentication after first application boot.
 + Response 200
 
     [Menu Item][]
+
+## Feedback Collection [/v1/places/{place_id}/feedbacks]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + id (number)
+
++ Model (application/json)
+
+    JSON representation of feedbacks.
+
+    + Body
+
+        [{
+            "id": 1,
+            "content": "Some feedback content",
+            "image": null,
+            "user": {
+              "id": 9,
+              "first_name": "Alex",
+              "last_name": "Beznos",
+              "photo": null
+            }
+        }]
+
+### GET
+
++ Response 200
+
+    [Feedback Collection][]
+
+### POST
++ Attributes
+    + content (string, required)
+    + image (string) - we can save only links till we find out image dimensions which we will use
+
++ Request (application/json)
+
+    {
+        "feedback": {
+            "content": "Hello Guys"
+        }
+    }
+
++ Response 200
+
+    {
+        "id": 1,
+        "content": "Some feedback content",
+        "image": null
+    }
