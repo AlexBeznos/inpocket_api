@@ -1,4 +1,6 @@
 class Present < ApplicationRecord
+  include Paginatable
+  
   belongs_to :place
 
   scope :without_debut, -> { where(debut: false) }

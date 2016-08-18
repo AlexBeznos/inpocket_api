@@ -3,7 +3,7 @@ module V1
     before_action :find_place
 
     def index
-      @feedbacks = Feedback.where(place: @place)
+      @feedbacks = Feedback.where(place: @place).paginated(params)
 
       respond_with @feedbacks
     end

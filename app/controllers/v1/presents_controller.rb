@@ -1,7 +1,9 @@
 module V1
   class PresentsController < ApplicationController
     def index
-      @presents = Present.where(place_id: params[:place_id]).without_debut
+      @presents = Present.where(place_id: params[:place_id])
+                         .paginated(params)
+                         .without_debut
 
       respond_with @presents
     end
