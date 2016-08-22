@@ -1,11 +1,8 @@
 module V1
   class PlacesController < ApplicationController
-    def index # TODO: make this much better
-      @places = if params[:uuid]
-        Place.joins(:beacons).where("beacons.uuid in (?)", params[:uuid])
-      else
-        Place.all
-      end
+    def index
+      @places = Place.filter(params.slice(:uuid))
+                     .paginated(params)
 
       respond_with @places
     end

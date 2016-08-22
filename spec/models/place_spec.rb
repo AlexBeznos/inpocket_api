@@ -11,6 +11,9 @@ RSpec.describe Place, type: :model do
   it { is_expected.to validate_presence_of(:description) }
   it { is_expected.to validate_presence_of(:logo) }
   it { is_expected.to validate_presence_of(:address) }
+  it { is_expected.to validate_presence_of(:working_hours) }
+  it { is_expected.to validate_presence_of(:site) }
+  it { is_expected.to validate_presence_of(:category) }
   it { is_expected.to validate_inclusion_of(:color).in_array(Colorable::COLORS.keys) }
 
   it 'should have valid factory' do

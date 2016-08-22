@@ -1,4 +1,4 @@
-attributes :id, :description, :name, :address, :phones, :logo, :images, :lng, :lat, :color
+attributes :id, :description, :name, :logo, :images, :lng, :lat, :color, :in_pocket
 
 node :color_rgb do |pl|
   pl.color_rgb

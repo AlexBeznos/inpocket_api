@@ -101,38 +101,52 @@
 #   place_id: 1
 # )
 
-MenuItem.create!(
-  name: 'Паста Песто',
-  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
-  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
-  price: 65,
-  menu_category_id: 1
-)
-MenuItem.create!(
-  name: 'Паста Песто',
-  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
-  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
-  price: 65,
-  menu_category_id: 1
-)
-MenuItem.create!(
-  name: 'Паста Песто',
-  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
-  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
-  price: 65,
-  menu_category_id: 1
-)
-MenuItem.create!(
-  name: 'Паста Песто',
-  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
-  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
-  price: 65,
-  menu_category_id: 1
-)
-MenuItem.create!(
-  name: 'Паста Песто',
-  description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
-  image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
-  price: 65,
-  menu_category_id: 1
-)
+# MenuItem.create!(
+#   name: 'Паста Песто',
+#   description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+#   image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+#   price: 65,
+#   menu_category_id: 1
+# )
+# MenuItem.create!(
+#   name: 'Паста Песто',
+#   description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+#   image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+#   price: 65,
+#   menu_category_id: 1
+# )
+# MenuItem.create!(
+#   name: 'Паста Песто',
+#   description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+#   image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+#   price: 65,
+#   menu_category_id: 1
+# )
+# MenuItem.create!(
+#   name: 'Паста Песто',
+#   description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+#   image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+#   price: 65,
+#   menu_category_id: 1
+# )
+# MenuItem.create!(
+#   name: 'Паста Песто',
+#   description: 'Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.',
+#   image: 'http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg',
+#   price: 65,
+#   menu_category_id: 1
+# )
+
+attrs = {
+  category: 'Фаст-Фуд',
+  site: 'http://google.com',
+  in_pocket: true,
+  working_hours: {
+    'Пн- Чт' => '10:00 - 23:00',
+    'Пт' => '10:00 - 02:00',
+    'Сб- Вс' => '10:00 - 03:00'
+  }
+}
+
+Place.find(1).update(attrs)
+Place.find(2).update(attrs)
