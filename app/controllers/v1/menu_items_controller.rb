@@ -1,7 +1,7 @@
 module V1
   class MenuItemsController < ApplicationController
     def index
-      @items = MenuItem.where(menu_category_id: params[:menu_category_id])
+      @items = MenuItem.filter(params.slice(:menu_category_id, :day_item, :place_id))
                        .paginated(params)
     end
 

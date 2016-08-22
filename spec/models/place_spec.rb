@@ -6,6 +6,7 @@ RSpec.describe Place, type: :model do
   it { is_expected.to have_many(:beacons).dependent(:destroy) }
   it { is_expected.to have_many(:presents).dependent(:destroy) }
   it { is_expected.to have_many(:shares).dependent(:destroy) }
+  it { is_expected.to have_many(:menu_categories).dependent(:destroy) }
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:description) }
   it { is_expected.to validate_presence_of(:logo) }
