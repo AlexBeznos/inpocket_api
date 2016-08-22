@@ -388,6 +388,60 @@ Action for device authentication after first application boot.
 
     [Menu Item Collection][]
 
+## Menu Item Collection by place [/v1/places/{place_id}/menu_items]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+    + day_item (boolean, optional)
+    + page (number, optional)
+    + per_page (number, optional)
+
++ Model (application/json)
+
+    JSON representation of menu item collection.
+
+    + Body
+
+        [{
+            "id": 1,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 2,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 3,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 4,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+          },
+          {
+            "id": 5,
+            "name": "Паста Песто",
+            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+            "price": 65
+        }]
+
+### GET
+
++ Response 200
+
+    [Menu Item Collection by place][]
+
 ## Menu Item [/v1/menu_items/{id}/]
 
 + Headers
