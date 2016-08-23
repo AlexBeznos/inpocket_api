@@ -48,21 +48,35 @@ Action for device authentication after first application boot.
 
     + Body
 
-            {
-                "id": 2,
-                "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
-                "name": "Vapiano",
-                "address": "Червоноармiйська-Бассейна 1-3/2 Киев",
-                "phones": [],
-                "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-                "images": [],
-                "lng": "30.5234",
-                "lat": "50.4501",
-                "color": "red",
-                "color_rgb": [244,67,54],
-                "color_hex": "#F44336",
-                "present_received?": true
-            }
+        {
+            "address": "Червоноармiйська-Бассейна 1-3/2 Kyiv",
+            "phones": [ "+380937003321, +380689999398" ],
+            "working_hours": {
+                "Пн- Чт": "10:00 - 23:00",
+                "Пт": "10:00 - 02:00",
+                "Сб- Вс": "10:00 - 03:00"
+            },
+            "site": "http://google.com",
+            "category": "Фаст-Фуд",
+            "id": 1,
+            "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+            "name": "Vapiano",
+            "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+            "images": [
+                "http://www.pronett.com/wp-content/uploads/2015/01/Vapiano-Image-correct.jpg",
+                "https://www.vapiano.com/fileadmin/media/_processed_/csm_cooking_station_9ae67d0bd6.jpg",
+                "https://www.vapiano.com/fileadmin/media/_processed_/csm_lounge_8113050f19.jpg",
+                "https://s3.eu-central-1.amazonaws.com/mytable-rest/rest_52847486_rp_b.jpg",
+                "http://cdn.partyearth.com/photos/807f2c3e171f60f5ad8c1b0183f67053/vapiano_s345x230.jpg"
+            ],
+            "lng": "30.5234",
+            "lat": "50.4501",
+            "color": "red",
+            "in_pocket": true,
+            "color_rgb": [ 244, 67, 54 ],
+            "color_hex": "#F44336",
+            "present_received?": false
+        }
 
 ### GET
 + Response 200
