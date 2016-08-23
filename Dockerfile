@@ -1,8 +1,12 @@
 FROM ruby:2.3.1
+
+ENV app /pocket_waiter
+
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN mkdir /pocket_waiter
-WORKDIR /pocket_waiter
-ADD Gemfile /pocket_waiter/Gemfile
-ADD Gemfile.lock /pocket_waiter/Gemfile.lock
-RUN bundle install
-ADD . /pocket_waiter
+RUN mkdir $app
+WORKDIR $app
+RUN gem install bundler
+ENV BUNDLE_PATH /bundle
+
+WORKDIR $app
+COPY . ./
