@@ -562,3 +562,43 @@ Action for device authentication after first application boot.
         "content": "Some feedback content",
         "image": null
     }
+
+## Orders Collection [/v1/places/{place_id}/orders]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+
+### POST
++ Attributes
+    + uuid (array, required)
+    + qr (string, required)
+    + lat (string, required)
+    + lng (string, required)
+    + goods (array, required)
+    + goods type (enum[string], required)
+
+        + Members
+            + `present`
+            + `menu_item`
+
+    + goods id (integer, required)
+
++ Request (application/json)
+
+    {
+        "order": {
+            "uuid": ["550e8400-e29b-41d4-a716-446655440000"],
+            "qr": "446655440000",
+            "lat": "50.453171",
+            "lng": "30.447",
+            "goods": [
+                { "type": "present", "id": 2 },
+                { "type": "menu_item", "id": 1 }
+            ]
+        }
+    }
+
++ Response 200

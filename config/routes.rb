@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :feedbacks, only: [:index, :create]
       resources :shares, only: [:index]
       resources :menu_items, only: [:index]
+      resources :orders, only: [:create]
       resources :menu_categories, only: [:index], shallow: true do
         resources :menu_items, only: [:index, :show]
       end
