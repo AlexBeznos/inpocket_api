@@ -578,13 +578,8 @@ Action for device authentication after first application boot.
     + lat (string, required)
     + lng (string, required)
     + goods (array, required)
-    + goods type (enum[string], required)
-
-        + Members
-            + `present`
-            + `menu_item`
-
-    + goods id (integer, required)
+        + id (string, required)
+        + type (string, required) - can be `present` or `menu_item`
 
 + Request (application/json)
 
