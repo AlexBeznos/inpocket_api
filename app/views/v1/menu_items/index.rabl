@@ -1,2 +1,2 @@
 collection @items
-attributes :id, :name, :image, :price
+extends 'v1/menu_items/base'

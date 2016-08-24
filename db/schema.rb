@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822125159) do
+ActiveRecord::Schema.define(version: 20160824000250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160822125159) do
     t.text     "working_hours"
     t.boolean  "in_pocket",     default: false
     t.string   "category"
+    t.integer  "bonus_part",    default: 10
   end
 
   create_table "presents", force: :cascade do |t|

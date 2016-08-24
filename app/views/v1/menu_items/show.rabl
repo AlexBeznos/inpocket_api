@@ -1,2 +1,3 @@
 object @item
-attributes :id, :name, :description, :image, :price
+extends 'v1/menu_items/base'
+attributes :description
