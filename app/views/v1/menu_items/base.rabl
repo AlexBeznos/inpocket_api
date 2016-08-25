@@ -1,1 +1,1 @@
-attributes :id, :name, :image, :price, :bonus
+attributes :id, :name, :image, :description, :price, :bonus
