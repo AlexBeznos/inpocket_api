@@ -1,0 +1,5 @@
+class RemoveImagesFromPlace < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :places, :images
+  end
+end

@@ -1,6 +1,8 @@
 class Present < ApplicationRecord
   include Paginatable
-  
+
+  mount_uploader :image, BaseUploader
+
   belongs_to :place
 
   scope :without_debut, -> { where(debut: false) }

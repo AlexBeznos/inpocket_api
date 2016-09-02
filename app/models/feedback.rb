@@ -1,5 +1,8 @@
 class Feedback < ApplicationRecord
   include Paginatable
+
+  mount_uploader :image, BaseUploader
+
   belongs_to :user
   belongs_to :place
 

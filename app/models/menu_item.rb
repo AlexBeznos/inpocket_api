@@ -1,6 +1,9 @@
 class MenuItem < ApplicationRecord
   include Paginatable
   include Filterable
+
+  mount_uploader :image, BaseUploader
+
   belongs_to :menu_category
 
   scope :by_day_item, -> (day_item) { where(day_item: day_item) }

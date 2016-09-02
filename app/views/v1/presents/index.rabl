@@ -1,2 +1,6 @@
 collection @presents
-attributes :id, :name, :price, :image, :description
+attributes :id, :name, :price, :description
+
+node :image do |pr|
+  pr.image.url
+end

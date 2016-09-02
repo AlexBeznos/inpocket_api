@@ -6,4 +6,8 @@ class PlaceDecorator < Draper::Decorator
       "#{days}: #{hours}"
     end
   end
+
+  def images_array
+    photos.map { |ph| ph.image.url }
+  end
 end

@@ -21,6 +21,9 @@ gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
 gem 'exception_notification'
 gem 'slack-notifier'
+
+gem 'carrierwave'
+gem 'carrierwave-aws'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

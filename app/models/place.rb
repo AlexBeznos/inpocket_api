@@ -5,13 +5,15 @@ class Place < ApplicationRecord
 
   colorate :color
   serialize :phones, Array
-  serialize :images, Array
   serialize :working_hours, Hash
+
+  mount_uploader :logo, BaseUploader
 
   has_many :beacons, dependent: :destroy
   has_many :presents, dependent: :destroy
   has_many :shares, dependent: :destroy
   has_many :menu_categories, dependent: :destroy
+  has_many :photos, class_name: PlaceImage, dependent: :destroy
 
   scope :by_uuid, -> (uuid) { joins(:beacons).where("beacons.uuid in (?)", uuid) }
 

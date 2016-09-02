@@ -8,7 +8,9 @@ module V1
     end
 
     def show
-      @place = Place.find(params[:id]).decorate
+      @place = Place.includes(:photos)
+                    .find(params[:id])
+                    .decorate
 
       respond_with @place
     end

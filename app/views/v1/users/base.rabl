@@ -1,1 +1,5 @@
-attributes :id, :first_name, :last_name, :photo
+attributes :id, :first_name, :last_name
+
+node :photo do |u|
+  u.photo.url
+end

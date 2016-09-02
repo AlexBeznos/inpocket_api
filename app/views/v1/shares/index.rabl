@@ -1,2 +1,6 @@
 collection @shares
-attributes :id, :name, :image, :description
+attributes :id, :name, :description
+
+node :image do |s|
+  s.image.url
+end

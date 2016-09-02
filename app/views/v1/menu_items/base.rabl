@@ -1,1 +1,5 @@
-attributes :id, :name, :image, :description, :price, :bonus
+attributes :id, :name, :description, :price, :bonus
+
+node :image do |mi|
+  mi.image.url
+end
