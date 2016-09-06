@@ -580,6 +580,8 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
+    + page (number, optional)
+    + per_page (number, optional)
 
 ### POST
 + Attributes
@@ -607,3 +609,44 @@ Action for device authentication after first application boot.
     }
 
 + Response 200
+
+### GET
+
++ Response 200
+
+    [{
+        "id": 5,
+        "menu_items": [{
+            "id": 1,
+            "name": "Паста Песто",
+            "price": 65,
+            "image": "/uploads/menu_item/image/1_1472733650.jpg",
+            "bonus": 7
+        },
+        {
+            "id": 2,
+            "name": "Паста Песто",
+            "price": 65,
+            "image": "/uploads/menu_item/image/2_1472733656.jpg",
+            "bonus": 7
+        }],
+        "created_at": 1473147757
+    },
+    {
+        "id": 4,
+        "menu_items": [{
+            "id": 1,
+            "name": "Паста Песто",
+            "price": 65,
+            "image": "/uploads/menu_item/image/1_1472733650.jpg",
+            "bonus": 7
+        },
+        {
+            "id": 2,
+            "name": "Паста Песто",
+            "price": 65,
+            "image": "/uploads/menu_item/image/2_1472733656.jpg",
+            "bonus": 7
+        }],
+        "created_at": 1473147074
+    }]

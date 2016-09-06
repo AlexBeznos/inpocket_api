@@ -1,7 +1,9 @@
 class Feedback < ApplicationRecord
   include Paginatable
+  include UnixTimeable
 
   mount_uploader :image, BaseUploader
+  unix_time :created_at
 
   belongs_to :user
   belongs_to :place
@@ -14,9 +16,5 @@ class Feedback < ApplicationRecord
     if !user || !user.signed
       errors.add(:user, 'should be signed')
     end
-  end
-
-  def created_at_unix
-    created_at.to_time.to_i
   end
 end
