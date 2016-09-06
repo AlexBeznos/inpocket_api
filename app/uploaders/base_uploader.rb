@@ -4,7 +4,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    @name ||= "#{model.id}_#{timestamp}.#{file.extension}" if original_filename.present?
+    @name ||= "#{secure_token(10)}_#{timestamp}.#{file.extension}" if original_filename.present?
   end
 
   def extension_whitelist
@@ -16,5 +16,10 @@ class BaseUploader < CarrierWave::Uploader::Base
   def timestamp
     var = :"@#{mounted_as}_timestamp"
     model.instance_variable_get(var) or model.instance_variable_set(var, Time.now.to_i)
+  end
+
+  def secure_token(length=16)
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
   end
 end

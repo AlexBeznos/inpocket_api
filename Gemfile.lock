@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/AlexBeznos/carrierwave-base64.git
+  revision: f3abb9da3a2c5c50545e1d180d5490376bc0516c
+  specs:
+    carrierwave-base64 (2.3.1)
+      carrierwave (>= 0.8.0, < 0.12.0)
+
+GIT
   remote: git://github.com/audionerd/draper.git
   revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
   branch: rails5
@@ -72,8 +79,6 @@ GEM
     carrierwave-aws (1.0.1)
       aws-sdk (~> 2.0)
       carrierwave (~> 0.7)
-    carrierwave-base64 (2.3.1)
-      carrierwave (>= 0.8.0, < 0.12.0)
     concurrent-ruby (1.0.2)
     database_cleaner (1.5.3)
     default_value_for (3.0.2)
@@ -213,7 +218,7 @@ DEPENDENCIES
   byebug
   carrierwave
   carrierwave-aws
-  carrierwave-base64
+  carrierwave-base64!
   database_cleaner
   default_value_for
   draper!
