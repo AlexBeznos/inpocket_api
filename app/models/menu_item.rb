@@ -2,7 +2,7 @@ class MenuItem < ApplicationRecord
   include Paginatable
   include Filterable
 
-  mount_uploader :image, BaseUploader
+  mount_base64_uploader :image, BaseUploader
 
   belongs_to :menu_category
 

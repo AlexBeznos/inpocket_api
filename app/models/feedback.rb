@@ -2,7 +2,7 @@ class Feedback < ApplicationRecord
   include Paginatable
   include UnixTimeable
 
-  mount_uploader :image, BaseUploader
+  mount_base64_uploader :image, BaseUploader
   unix_time :created_at
 
   belongs_to :user

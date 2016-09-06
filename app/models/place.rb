@@ -7,7 +7,7 @@ class Place < ApplicationRecord
   serialize :phones, Array
   serialize :working_hours, Hash
 
-  mount_uploader :logo, BaseUploader
+  mount_base64_uploader :logo, BaseUploader
 
   has_many :beacons, dependent: :destroy
   has_many :presents, dependent: :destroy

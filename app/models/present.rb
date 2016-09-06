@@ -1,7 +1,7 @@
 class Present < ApplicationRecord
   include Paginatable
 
-  mount_uploader :image, BaseUploader
+  mount_base64_uploader :image, BaseUploader
 
   belongs_to :place
 
