@@ -59,8 +59,8 @@ class OrderService
   end
 
   def init_decorated_items
-    self.decorated_menu_items = MenuItem.includes(menu_category: :place)
-                                        .where(id: menu_item_ids)
-                                        .decorate
+    items = MenuItem.includes(menu_category: :place).where(id: menu_item_ids)
+    items_array = menu_item_ids.map {|id| items.find {|item| item.id == id}}
+    self.decorated_menu_items = MenuItemDecorator.decorate_collection(items_array)
   end
 end
