@@ -2,6 +2,8 @@ class Feedback < ApplicationRecord
   include Paginatable
   include UnixTimeable
 
+  default_scope { order(created_at: :desc) }
+
   mount_base64_uploader :image, BaseUploader
   unix_time :created_at
 
