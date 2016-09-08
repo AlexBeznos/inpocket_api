@@ -15,7 +15,7 @@ module V1
     private
 
     def auth_params
-      params.require(:device).permit(:platform, :push_token)
+      params.require(:device).permit(:platform, :push_token, :uniq_id)
     end
   end
 end

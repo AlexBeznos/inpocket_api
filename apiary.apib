@@ -16,6 +16,7 @@ Action for device authentication after first application boot.
           + `android`
           + `web`
     + push_token (string, required) - specific token for push notifications
+    + uniq_id (string) - device uniq identifier
 
 + Request (application/json)
 
@@ -23,6 +24,7 @@ Action for device authentication after first application boot.
           "device": {
             "platform": "ios",
             "push_token": "ce8be627 2e43e855 16033e24 b4c28922 0eeda487 9c477160 b2545e95 b68b5969"
+            "uniq_id": "ce8be627 2e43e855 16033e24 b4c28922 0eeda487"
           }
         }
 
