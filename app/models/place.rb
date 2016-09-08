@@ -15,6 +15,7 @@ class Place < ApplicationRecord
   has_many :shares, dependent: :destroy
   has_many :menu_categories, dependent: :destroy
   has_many :photos, class_name: PlaceImage, dependent: :destroy
+  has_many :user_scores, dependent: :destroy
 
   scope :by_uuid, -> (uuid) { joins(:beacons).where("beacons.uuid in (?)", uuid) }
 

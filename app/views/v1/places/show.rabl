@@ -10,3 +10,7 @@ end
 node :images do |place|
   place.images_array
 end
+
+node :score do |place|
+  place.currect_user_score
+end
