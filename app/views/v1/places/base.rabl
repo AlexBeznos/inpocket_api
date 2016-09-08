@@ -11,3 +11,7 @@ end
 node :logo do |pl|
   pl.logo.url
 end
+
+node :card_image do |place|
+  place.card_image.url
+end

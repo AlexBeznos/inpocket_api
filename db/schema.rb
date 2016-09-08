@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908075846) do
+ActiveRecord::Schema.define(version: 20160908081808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20160908075846) do
     t.boolean  "in_pocket",     default: false
     t.string   "category"
     t.integer  "bonus_part",    default: 10
+    t.string   "card_image"
   end
 
   create_table "presents", force: :cascade do |t|
