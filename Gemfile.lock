@@ -68,6 +68,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.5.6)
       aws-sdk-core (= 2.5.6)
+    bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.5)
     carrierwave (0.11.2)
@@ -84,6 +85,8 @@ GEM
     default_value_for (3.0.2)
       activerecord (>= 3.2.0, < 5.1)
     diff-lcs (1.2.5)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     exception_notification (4.2.1)
       actionmailer (>= 4.0, < 6)
@@ -215,6 +218,7 @@ PLATFORMS
 
 DEPENDENCIES
   activemodel-serializers-xml
+  bcrypt (~> 3.1.7)
   byebug
   carrierwave
   carrierwave-aws
@@ -222,6 +226,7 @@ DEPENDENCIES
   database_cleaner
   default_value_for
   draper!
+  email_validator
   exception_notification
   factory_girl_rails
   faker

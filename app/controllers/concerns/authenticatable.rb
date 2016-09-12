@@ -13,7 +13,7 @@ module Authenticatable
 
   def authenticate_token
     authenticate_with_http_token do |token, options|
-      @current_device = Device.eager_load(:user).find_by(access_token: token)
+      @current_device = Device.includes(:user).find_by(access_token: token)
       @current_user = @current_device.user
     end
   end

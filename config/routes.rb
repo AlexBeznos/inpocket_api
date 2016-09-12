@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [] do
       get 'self', to: 'self_users#show', on: :collection
+      post 'sign_in', to: 'sign_in#create', on: :collection
     end
   end
 end
