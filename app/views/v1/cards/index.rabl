@@ -2,7 +2,7 @@ collection @cards
 attributes :id, :bonus
 
 child :place do
-  attributes :id, :name
+  attributes :id, :name, :category
 
   node :card_image do |place|
     place.card_image.url
