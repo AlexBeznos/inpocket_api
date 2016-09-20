@@ -33,7 +33,7 @@ class SignInService
 
   def email_authenticate
     user = User.find_by(email: email)
-    user.authenticate(password)
+    user.try(:authenticate, password)
   end
 
   def facebook_authenticate
