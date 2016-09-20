@@ -3,68 +3,44 @@ class SignInService
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :provider, :attributes, :current_user,
-                :user_params, :profile_params, :profile_class
+  attr_accessor :provider, :email, :password, :uid, :current_device
 
   validates :provider, presence: true
   validates :provider, inclusion: { in: ['email', 'facebook', 'vk'] }
 
+  validates :email, :password, presence: true, if: -> (u) { u.provider == 'email' }
+  validates :uid, presence: true, if: -> (u) { ['facebook', 'vk'].include? u.provider }
+
   def initialize(attributes = {})
-    @attributes = attributes
-    @provider = @attributes[:provider]
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
   end
 
   def save
     return false unless self.valid?
-    prepare_params
+    authenticated_user = send("#{provider}_authenticate")
 
-    ActiveRecord::Base.transaction do
-      user_update
-      profile_create unless provider == 'email'
+    if authenticated_user
+      # TODO: add merge
+      true
+    else
+      false
     end
-
-    !self.errors.any?
-  end
-
-  def persisted?
-    false
   end
 
   private
 
-  def prepare_params
-    prepare_user_params
-    prepare_profile_params if provider && provider != 'email'
+  def email_authenticate
+    user = User.find_by(email: email)
+    user.authenticate(password)
   end
 
-  def prepare_user_params
-    @user_params = attributes.select {|k,v| User.attribute_names.include?(k.to_s)}
-    @user_params[:signed] = true
+  def facebook_authenticate
+    FacebookProfile.find_by(uid: uid.to_i).try(:user)
   end
 
-  def prepare_profile_params
-    @profile_class = "#{provider}_profile".classify.constantize
-    @profile_params = attributes.select do |k, v|
-      profile_class.attribute_names.include? k.to_s
-    end
-
-    @profile_params[:user_id] = current_user.id
-  end
-
-  def user_update
-    current_user.update(user_params)
-
-    if current_user.errors.any?
-      self.errors.add(:user, current_user.errors)
-    end
-  end
-
-  def profile_create
-    profile = profile_class.new(profile_params)
-    profile.save
-
-    if profile.errors.any?
-      self.errors.add(profile_class.to_s.underscore, profile.errors)
-    end
+  def vk_authenticate
+    VkProfile.find_by(uid: uid.to_i).try(:user)
   end
 end

@@ -2,9 +2,11 @@ module V1
   class SignInController < ApplicationController
     def create
       @auth = SignInService.new(sign_in_params)
-      @auth.current_user = current_user
+      @auth.current_device = current_device
 
-      unless @auth.save
+      if @auth.save
+        render nothing: true, status: :ok
+      else
         record_invalid @auth.errors
       end
     end
@@ -12,7 +14,9 @@ module V1
     private
 
     def sign_in_params
-      params.require(:user).permit(:first_name, :last_name, :provider, :email, :password, :photo)
+      params.require(:user).permit(
+        :provider, :email, :password, :uid
+      )
     end
   end
 end

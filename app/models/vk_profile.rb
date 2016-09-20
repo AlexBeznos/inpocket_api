@@ -1,4 +1,4 @@
-class FacebookProfile < ApplicationRecord
+class VkProfile < ApplicationRecord
   belongs_to :user
 
   enum gender: ['male', 'female']

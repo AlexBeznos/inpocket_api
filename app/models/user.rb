@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
   has_many :user_scores, dependent: :destroy
+  has_one :facebook_profile, dependent: :destroy
+  has_one :vk_profile, dependent: :destroy
 
   with_options if: :signed do |user|
     user.validates :email, presence: true

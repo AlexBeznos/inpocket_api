@@ -1,6 +1,6 @@
-class CreateFacebookProfiles < ActiveRecord::Migration[5.0]
+class CreateVkProfiles < ActiveRecord::Migration[5.0]
   def change
-    create_table :facebook_profiles do |t|
+    create_table :vk_profiles do |t|
       t.integer :uid
       t.string :email
       t.integer :gender
@@ -11,7 +11,7 @@ class CreateFacebookProfiles < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_index :facebook_profiles, :uid
-    add_index :facebook_profiles, :user_id
+    add_index :vk_profiles, :uid
+    add_index :vk_profiles, :user_id
   end
 end
