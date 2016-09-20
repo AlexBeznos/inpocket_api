@@ -38,7 +38,10 @@ class SignUpService
   end
 
   def prepare_user_params
-    @user_params = attributes.select {|k,v| User.attribute_names.include?(k.to_s)}
+    @user_params = attributes.select do |k,v|
+      [ User.attribute_names + 'password' ].include?(k.to_s)
+    end
+    
     @user_params[:signed] = true
   end
 
