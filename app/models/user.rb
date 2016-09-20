@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :user_scores, dependent: :destroy
 
   with_options if: :signed do |user|
-    user.validates :first_name, :last_name, :email, presence: true
-    user.validates :email, email: true
+    user.validates :email, presence: true
+    user.validates :email, email: true, allow_blank: true
   end
 
 end
