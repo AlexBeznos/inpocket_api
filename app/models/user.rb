@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :current_password
   has_secure_password validations: false
   mount_base64_uploader :photo, BaseUploader
 
@@ -12,6 +13,12 @@ class User < ApplicationRecord
     user.validates :email, email: true, allow_blank: true
   end
 
-  # validate :current_password, on: :update, if: -
+  validate :update_current_password, on: :update, if: -> (u) { u.password_digest_changed? }
+
+  def update_current_password
+    unless User.find(id).authenticate(current_password)
+      errors.add(:current_password, 'should be valid')
+    end
+  end
 
 end
