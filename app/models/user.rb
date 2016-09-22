@@ -12,4 +12,6 @@ class User < ApplicationRecord
     user.validates :email, email: true, allow_blank: true
   end
 
+  # validate :current_password, on: :update, if: -
+
 end
