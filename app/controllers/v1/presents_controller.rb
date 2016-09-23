@@ -2,8 +2,8 @@ module V1
   class PresentsController < ApplicationController
     def index
       @presents = Present.filter(params.slice(:place_id))
-                         .paginated(params)
                          .without_debut
+                         .paginated(params)
 
       respond_with @presents
     end

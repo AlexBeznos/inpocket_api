@@ -1,7 +1,8 @@
 module V1
   class SharesController < ApplicationController
     def index
-      @shares = Place.find(params[:place_id]).shares.paginated(params)
+      @shares = Share.filter(params.slice(:place_id))
+                     .paginated(params)
 
       respond_with @shares
     end
