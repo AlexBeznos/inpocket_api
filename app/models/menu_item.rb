@@ -13,6 +13,9 @@ class MenuItem < ApplicationRecord
   scope :by_place_id, -> (place_id) {
     joins(:menu_category).where(menu_categories: { place_id: place_id })
   }
+  scope :by_up_sale, -> (up_sale) {
+    where(up_sale: up_sale)
+  }
 
   validates :name, :image, :description, :menu_category, presence: true
 end
