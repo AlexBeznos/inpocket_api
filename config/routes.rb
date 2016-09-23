@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :v1, defaults: { format: 'json' } do
     resources :cards, only: :index
+    resources :presents, only: [:index]
     resources :places, only: [:index, :show] do
       resources :beacons, only: [:index]
       resources :presents, only: [:index, :show]

@@ -1,7 +1,7 @@
 module V1
   class PresentsController < ApplicationController
     def index
-      @presents = Present.where(place_id: params[:place_id])
+      @presents = Present.filter(params.slice(:place_id))
                          .paginated(params)
                          .without_debut
 
