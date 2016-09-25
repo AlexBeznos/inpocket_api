@@ -664,3 +664,89 @@ Action for device authentication after first application boot.
         }],
         "created_at": 1473147074
     }]
+
+## User sign in [/v1/users/sign_in]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
+### POST
++ Attributes
+    + provider (enum[string], required)
+
+        + Members
+            + `email`
+            + `vk`
+            + `facebook`
+    + email (string) - required if provider email
+    + password (string) - required if provider email
+    + uid (number) - required if provider vk or facebook. Can be number or string
+
++ Request (application/json)
+
+    {
+        "user": {
+            "provider": "email",
+            "email": "boo@u.com",
+            "password": "446655440000"
+        }
+    }
+
+    # or
+
+    {
+        "user": {
+            "provider": "vk",
+            "uid": "12312312"
+        }
+    }
+
++ Response 200
+
+## User sign up [/v1/users/sign_up]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
+### POST
++ Attributes
+    + provider (enum[string], required)
+
+        + Members
+            + `email`
+            + `vk`
+            + `facebook`
+    + email (string)
+    + password (string)
+    + uid (number)
+    + gender (enum[string])
+
+        + Members
+            + `male`
+            + `female`
+    + username (string)
+
+
++ Request (application/json)
+
+    {
+        "user": {
+            "provider": "vk",
+            "uid": "09123",
+            "gender": "male",
+            "username": "alex_beznos",
+            "email": "beznosa@yahoo.com"
+        }
+    }
+
+    # or
+
+    {
+        "user": {
+            "provider": "email",
+            "email": "beznosa@yahoo.com",
+            "password": "17238617638",
+        }
+    }
+
++ Response 200

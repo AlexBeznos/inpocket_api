@@ -4,7 +4,9 @@ module V1
       @auth = SignUpService.new(sign_up_params)
       @auth.current_user = current_user
 
-      unless @auth.save
+      if @auth.save
+        render nothing: true, status: :ok
+      else
         record_invalid @auth.errors
       end
     end
