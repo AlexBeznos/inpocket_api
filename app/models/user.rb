@@ -13,10 +13,11 @@ class User < ApplicationRecord
     user.validates :email, email: true, allow_blank: true
   end
 
-  validate :update_current_password, on: :update, if: -> (u) { u.password_digest_changed? }
+  validate :update_current_password, on: :update,
+    if: -> (u) { u.password_digest_changed? && u.password_digest_was != '' }
 
   def update_current_password
-    unless User.find(id).authenticate(current_password)
+    if !current_password || !User.find(id).authenticate(current_password)
       errors.add(:current_password, 'should be valid')
     end
   end
