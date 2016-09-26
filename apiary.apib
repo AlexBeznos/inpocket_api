@@ -121,6 +121,23 @@ Action for device authentication after first application boot.
 
     [Current User][]
 
+### PUT
+
++ Request (application/json)
+
+    {
+        "user": {
+            "first_name": "Alex",
+            "last_name": "Beznos",
+            "password": "7894123",
+            "current_password": "7894123",
+            "email": "beznosa@yahoo.com",
+            "photo": "base64",
+        }
+    }
+
++ Response 200
+
 ## Places Collection [/v1/places]
 
 + Headers
@@ -215,6 +232,8 @@ Action for device authentication after first application boot.
     + place_id (number)
     + per_page (number, optional)
     + page (number, optional)
+    + lng (number, optional)
+    + lat (number, optional)
 
 + Model (application/json)
 
@@ -236,6 +255,24 @@ Action for device authentication after first application boot.
             "image": "http://pizzafab.ru/pictures/pizza/photo/catalog_photo_57.png",
             "description": "Пицца Диабло создана специально для любителей по-настоящему острых ощущений. В ней вкус свежих помидоров, сочной говядины, ветчины и салями пикантно дополнен острой и пряной колбасой пепперони и жгучим перцем халапеньо."
           }]
+
+### GET
+
++ Response 200
+
+    [Presents Collection][]
+
+## Presents Collection without place [/v1/presents]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Parameters
+    + place_id (number)
+    + per_page (number, optional)
+    + page (number, optional)
+    + lng (number, optional)
+    + lat (number, optional)
 
 ### GET
 
@@ -309,6 +346,8 @@ Action for device authentication after first application boot.
     + place_id (number)
     + page (number, optional)
     + per_page (number, optional)
+    + lng (number, optional)
+    + lat (number, optional)
 
 + Model (application/json)
 
@@ -755,3 +794,44 @@ Action for device authentication after first application boot.
     }
 
 + Response 200
+
+## Cards collection [/v1/cards]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
+### GET
+
++ Response 200
+    [{
+      "id": 896,
+      "bonus": 25,
+      "place": {
+        "id": 2,
+        "name": "CoffeetoriaLounge",
+        "category": "Фаст-Фуд",
+        "card_image": "https://in-pocket-stage.s3.eu-central-1.amazonaws.com/uploads/place/card_image/06a6ada6f5_1473338615.jpg",
+        "color_rgb": [
+          244,
+          67,
+          54
+        ],
+        "color_hex": "#F44336"
+      }
+    },
+    {
+      "id": 895,
+      "bonus": 25,
+      "place": {
+        "id": 1,
+        "name": "Vapiano",
+        "category": "Фаст-Фуд",
+        "card_image": "https://in-pocket-stage.s3.eu-central-1.amazonaws.com/uploads/place/card_image/25f3103550_1473338613.jpg",
+        "color_rgb": [
+          244,
+          67,
+          54
+        ],
+        "color_hex": "#F44336"
+      }
+    }]
