@@ -1,4 +1,7 @@
-attributes :id, :description, :name, :lng, :lat, :color, :in_pocket, :category, :address, :phones
+attributes :id, :description, :name, :lng, :lat,
+           :color, :in_pocket, :category, :address,
+           :phone, :working_hours, :working_hours_decorated,
+           :site, :category
 
 node :color_rgb do |pl|
   pl.color_rgb
@@ -10,6 +13,10 @@ end
 
 node :logo do |pl|
   pl.logo.url
+end
+
+node :images do |place|
+  place.images_array
 end
 
 node :card_image do |place|
