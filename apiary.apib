@@ -549,7 +549,7 @@ Action for device authentication after first application boot.
 
 + Attributes
     + content (string, required)
-    + image (image)
+    + image (string)
 
 + Request (application/json)
 
@@ -557,7 +557,7 @@ Action for device authentication after first application boot.
         "feedback": {
             "content": "Hello Guys",
             "stars": 4,
-            "image": ImageObject
+            "image": "base64 encoded image"
         }
     }
 
