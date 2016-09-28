@@ -33,6 +33,8 @@ gem 'carrierwave-base64', github: 'AlexBeznos/carrierwave-base64'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'poster_api', github: 'AlexBeznos/poster_api'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
