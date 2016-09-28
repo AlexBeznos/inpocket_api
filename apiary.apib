@@ -145,6 +145,7 @@ Action for device authentication after first application boot.
 
 + Parameters
     + uuid (string | optional)
+    + category_id (number | optional)
 
 + Model (application/json)
 
@@ -198,6 +199,31 @@ Action for device authentication after first application boot.
 + Response 200
 
     [Places Collection][]
+
+## Place Categories Collection [/v1/place_categories]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
++ Model (application/json)
+
+    JSON representation of places.
+
+    + Body
+
+        [{
+            "id": 1,
+            "name": "Fast food"
+        },{
+            "id": 2,
+            "name": "Hookah"
+        }]
+
+### GET
+
++ Response 200
+
+    [Place Categories Collection][]
 
 ## Beacons Collection [/v1/places/{place_id}/beacons]
 

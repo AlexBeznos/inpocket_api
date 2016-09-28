@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928113402) do
+ActiveRecord::Schema.define(version: 20160928143914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +114,12 @@ ActiveRecord::Schema.define(version: 20160928113402) do
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
+  create_table "place_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "place_images", force: :cascade do |t|
     t.string   "image"
     t.integer  "place_id"
@@ -130,17 +136,19 @@ ActiveRecord::Schema.define(version: 20160928113402) do
     t.string   "logo"
     t.string   "lat"
     t.string   "lng"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "color"
     t.string   "site"
     t.text     "working_hours"
-    t.boolean  "in_pocket",         default: false
+    t.boolean  "in_pocket",          default: false
     t.string   "category"
-    t.integer  "bonus_part",        default: 10
+    t.integer  "bonus_part",         default: 10
     t.string   "card_image"
     t.string   "pos_terminal_type"
     t.integer  "pos_terminal_id"
+    t.integer  "category_record_id"
+    t.index ["category_record_id"], name: "index_places_on_category_record_id", using: :btree
     t.index ["pos_terminal_id", "pos_terminal_type"], name: "index_places_on_pos_terminal_id_and_pos_terminal_type", unique: true, using: :btree
     t.index ["pos_terminal_type", "pos_terminal_id"], name: "index_places_on_pos_terminal_type_and_pos_terminal_id", using: :btree
   end

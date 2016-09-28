@@ -15,4 +15,8 @@ class PlaceDecorator < Draper::Decorator
     user_score = user_scores.find_by(user: @current_user)
     user_score.try(:score) || 0
   end
+
+  def category
+    category_record.try(:name)
+  end
 end

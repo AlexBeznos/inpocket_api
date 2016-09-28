@@ -16,9 +16,11 @@ class Place < ApplicationRecord
   has_many :menu_categories, dependent: :destroy
   has_many :photos, class_name: PlaceImage, dependent: :destroy
   has_many :user_scores, dependent: :destroy
+  belongs_to :category_record, class_name: PlaceCategory
   # belongs_to :pos_terminal, polymorphic: true, dependent: :destroy
 
   scope :by_uuid, -> (uuid) { joins(:beacons).where("beacons.uuid in (?)", uuid) }
+  scope :by_category_id, -> (id) { where(category_record_id: id) }
 
   geocoded_by :address, latitude: :lat, longitude: :lng
 

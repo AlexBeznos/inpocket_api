@@ -1,7 +1,8 @@
 module V1
   class PlacesController < ApplicationController
     def index
-      @places = Place.filter(params.slice(:uuid))
+      @places = Place.includes(:photos, :category_record)
+                     .filter(params.slice(:uuid, :category_id))
                      .paginated(params)
                      .decorate
 
