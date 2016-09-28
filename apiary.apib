@@ -44,82 +44,68 @@ Action for device authentication after first application boot.
 + Headers
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
-+ Model (application/json)
-
-    JSON representation of place.
-
-    + Body
-
-        {
-            "address": "Червоноармiйська-Бассейна 1-3/2 Kyiv",
-            "phones": [ "+380937003321", "+380689999398" ],
-            "working_hours": {
-                "Пн- Чт": "10:00 - 23:00",
-                "Пт": "10:00 - 02:00",
-                "Сб- Вс": "10:00 - 03:00"
-            },
-            "working_hours_decorated": [
-              "Пн- Чт: 10:00 - 23:00",
-              "Пт: 10:00 - 02:00",
-              "Сб- Вс: 10:00 - 03:00"
-            ],
-            "site": "http://google.com",
-            "category": "Фаст-Фуд",
-            "id": 1,
-            "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
-            "name": "Vapiano",
-            "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-            "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-            "images": [
-                "http://www.pronett.com/wp-content/uploads/2015/01/Vapiano-Image-correct.jpg",
-                "https://www.vapiano.com/fileadmin/media/_processed_/csm_cooking_station_9ae67d0bd6.jpg",
-                "https://www.vapiano.com/fileadmin/media/_processed_/csm_lounge_8113050f19.jpg",
-                "https://s3.eu-central-1.amazonaws.com/mytable-rest/rest_52847486_rp_b.jpg",
-                "http://cdn.partyearth.com/photos/807f2c3e171f60f5ad8c1b0183f67053/vapiano_s345x230.jpg"
-            ],
-            "lng": "30.5234",
-            "lat": "50.4501",
-            "color": "red",
-            "in_pocket": true,
-            "color_rgb": [ 244, 67, 54 ],
-            "color_hex": "#F44336",
-            "is_present_received": false,
-            "score": 15
-        }
-
 ### GET
+
 + Response 200
 
-    [Place][]
+    {
+        "address": "Червоноармiйська-Бассейна 1-3/2 Kyiv",
+        "phones": [ "+380937003321", "+380689999398" ],
+        "working_hours": {
+            "Пн- Чт": "10:00 - 23:00",
+            "Пт": "10:00 - 02:00",
+            "Сб- Вс": "10:00 - 03:00"
+        },
+        "working_hours_decorated": [
+          "Пн- Чт: 10:00 - 23:00",
+          "Пт: 10:00 - 02:00",
+          "Сб- Вс: 10:00 - 03:00"
+        ],
+        "site": "http://google.com",
+        "category": "Фаст-Фуд",
+        "id": 1,
+        "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+        "name": "Vapiano",
+        "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+        "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+        "images": [
+            "http://www.pronett.com/wp-content/uploads/2015/01/Vapiano-Image-correct.jpg",
+            "https://www.vapiano.com/fileadmin/media/_processed_/csm_cooking_station_9ae67d0bd6.jpg",
+            "https://www.vapiano.com/fileadmin/media/_processed_/csm_lounge_8113050f19.jpg",
+            "https://s3.eu-central-1.amazonaws.com/mytable-rest/rest_52847486_rp_b.jpg",
+            "http://cdn.partyearth.com/photos/807f2c3e171f60f5ad8c1b0183f67053/vapiano_s345x230.jpg"
+        ],
+        "lng": "30.5234",
+        "lat": "50.4501",
+        "color": "red",
+        "in_pocket": true,
+        "color_rgb": [ 244, 67, 54 ],
+        "color_hex": "#F44336",
+        "is_present_received": false,
+        "score": 15
+    }
 
 ## Current User [/v1/users/self]
 
 + Headers
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
-+ Model (application/json)
-
-    JSON representation of current user.
-
-    + Body
-
-            {
-                "id": 44,
-                "first_name": null,
-                "last_name": null,
-                "photo": null,
-                "signed": false,
-                "facebook_profile": {
-                    "username": "alex_beznos"
-                },
-                "vk_profile": null,
-                "with_changable_password": true
-            }
-
 ### GET
+
 + Response 200
 
-    [Current User][]
+    {
+        "id": 44,
+        "first_name": null,
+        "last_name": null,
+        "photo": null,
+        "signed": false,
+        "facebook_profile": {
+            "username": "alex_beznos"
+        },
+        "vk_profile": null,
+        "with_changable_password": true
+    }
 
 ### PUT
 
@@ -143,87 +129,71 @@ Action for device authentication after first application boot.
 + Headers
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
-+ Parameters
+### GET
+
++ Attributes
     + uuid (string | optional)
     + category_id (number | optional)
 
-+ Model (application/json)
-
-    JSON representation of places.
-
-    + Body
-
-            [{
-                "id": 3,
-                "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
-                "name": "Vapiano",
-                "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-                "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-                "images": [],
-                "lng": "30.5234",
-                "lat": "50.4501",
-                "color": "red",
-                "category": "fast food",
-                "address": "пр-т Победы, 47-А",
-                "in_pocket": false,
-                "color_rgb": [
-                  244,
-                  67,
-                  54
-                ],
-                "color_hex": "#F44336"
-              },
-              {
-                "id": 4,
-                "description": "Кофетория лаунж открылась в апреле 2015 года, на момент публикации ей как раз исполнилось 1 год. Расположена она в пешей досягаемости от метро Шулявская, но с первого раза её можно и не заметить, подумав, что это обычная кофейня у метро, которых здесь масса.",
-                "name": "CoffeetoriaLounge",
-                "logo": "http://kalyan.bar/wp-content/uploads/2016/03/coffeetoria-logo.gif",
-                "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
-                "images": [],
-                "lng": "30.44732389999999",
-                "lat": "50.453171",
-                "category": "fast food",
-                "address": "пр-т Победы, 47-А",
-                "color": "red",
-                "in_pocket": true,
-                "color_rgb": [
-                  244,
-                  67,
-                  54
-                ],
-                "color_hex": "#F44336"
-              }]
-
-### GET
-
 + Response 200
 
-    [Places Collection][]
+    [{
+        "id": 3,
+        "description": "Идея популяризации домашней итальянской кухни пришла к нам из Германии, где и появилось первое кафе всемирно известной сети Vapiano в 2002 году. Открывая заведения сети в Москве, мы постарались донести до столичных гурманов основополагающую концепцию Vapiano в первоначальном виде.",
+        "name": "Vapiano",
+        "logo": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+        "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+        "images": [],
+        "lng": "30.5234",
+        "lat": "50.4501",
+        "color": "red",
+        "category": "fast food",
+        "address": "пр-т Победы, 47-А",
+        "in_pocket": false,
+        "color_rgb": [
+          244,
+          67,
+          54
+        ],
+        "color_hex": "#F44336"
+      },
+      {
+        "id": 4,
+        "description": "Кофетория лаунж открылась в апреле 2015 года, на момент публикации ей как раз исполнилось 1 год. Расположена она в пешей досягаемости от метро Шулявская, но с первого раза её можно и не заметить, подумав, что это обычная кофейня у метро, которых здесь масса.",
+        "name": "CoffeetoriaLounge",
+        "logo": "http://kalyan.bar/wp-content/uploads/2016/03/coffeetoria-logo.gif",
+        "card_image": "http://www.downtowndc.org/sites/default/files/images/poi/Vapiano%20Logo.jpg",
+        "images": [],
+        "lng": "30.44732389999999",
+        "lat": "50.453171",
+        "category": "fast food",
+        "address": "пр-т Победы, 47-А",
+        "color": "red",
+        "in_pocket": true,
+        "color_rgb": [
+          244,
+          67,
+          54
+        ],
+        "color_hex": "#F44336"
+      }]
 
 ## Place Categories Collection [/v1/place_categories]
 
 + Headers
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
-+ Model (application/json)
-
-    JSON representation of places.
-
-    + Body
-
-        [{
-            "id": 1,
-            "name": "Fast food"
-        },{
-            "id": 2,
-            "name": "Hookah"
-        }]
-
 ### GET
 
 + Response 200
 
-    [Place Categories Collection][]
+    [{
+        "id": 1,
+        "name": "Fast food"
+    },{
+        "id": 2,
+        "name": "Hookah"
+    }]
 
 ## Beacons Collection [/v1/places/{place_id}/beacons]
 
@@ -233,21 +203,13 @@ Action for device authentication after first application boot.
 + Parameters
     + place_id (number)
 
-+ Model (application/json)
-
-    JSON representation of beacons.
-
-    + Body
-
-            [{
-                "uuid": "bc52b91f-fce8-4d4e-9a91-484ab40baed7"
-            }]
-
 ### GET
 
 + Response 200
 
-    [Beacons Collection][]
+    [{
+        "uuid": "bc52b91f-fce8-4d4e-9a91-484ab40baed7"
+    }]
 
 ## Presents Collection [/v1/places/{place_id}/presents]
 
@@ -256,55 +218,61 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
+
+### GET
+
++ Attributes
     + per_page (number, optional)
     + page (number, optional)
     + lng (number, optional)
     + lat (number, optional)
 
-+ Model (application/json)
-
-    JSON representation of presents.
-
-    + Body
-
-          [{
-            "id": 1,
-            "name": "Карбонара",
-            "price": "20",
-            "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
-            "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
-          },
-          {
-            "id": 2,
-            "name": "Диабло",
-            "price": "30",
-            "image": "http://pizzafab.ru/pictures/pizza/photo/catalog_photo_57.png",
-            "description": "Пицца Диабло создана специально для любителей по-настоящему острых ощущений. В ней вкус свежих помидоров, сочной говядины, ветчины и салями пикантно дополнен острой и пряной колбасой пепперони и жгучим перцем халапеньо."
-          }]
-
-### GET
-
 + Response 200
 
-    [Presents Collection][]
+    [{
+      "id": 1,
+      "name": "Карбонара",
+      "price": "20",
+      "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+      "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+    },
+    {
+      "id": 2,
+      "name": "Диабло",
+      "price": "30",
+      "image": "http://pizzafab.ru/pictures/pizza/photo/catalog_photo_57.png",
+      "description": "Пицца Диабло создана специально для любителей по-настоящему острых ощущений. В ней вкус свежих помидоров, сочной говядины, ветчины и салями пикантно дополнен острой и пряной колбасой пепперони и жгучим перцем халапеньо."
+    }]
 
 ## Presents Collection without place [/v1/presents]
 
 + Headers
     Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
 
-+ Parameters
-    + place_id (number)
+### GET
+
++ Attributes
     + per_page (number, optional)
     + page (number, optional)
     + lng (number, optional)
     + lat (number, optional)
 
-### GET
-
 + Response 200
 
-    [Presents Collection][]
+    [{
+      "id": 1,
+      "name": "Карбонара",
+      "price": "20",
+      "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+      "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+    },
+    {
+      "id": 2,
+      "name": "Диабло",
+      "price": "30",
+      "image": "http://pizzafab.ru/pictures/pizza/photo/catalog_photo_57.png",
+      "description": "Пицца Диабло создана специально для любителей по-настоящему острых ощущений. В ней вкус свежих помидоров, сочной говядины, ветчины и салями пикантно дополнен острой и пряной колбасой пепперони и жгучим перцем халапеньо."
+    }]
 
 ## Present [/v1/places/{place_id}/presents/{id}]
 
@@ -315,25 +283,17 @@ Action for device authentication after first application boot.
     + place_id (number)
     + id (number)
 
-+ Model (application/json)
-
-    JSON representation of present.
-
-    + Body
-
-          {
-            "id": 1,
-            "name": "Карбонара",
-            "price": "20",
-            "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
-            "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
-          }
-
 ### GET
 
 + Response 200
 
-    [Present][]
+    {
+      "id": 1,
+      "name": "Карбонара",
+      "price": "20",
+      "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+      "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+    }
 
 ## Debut Present [/v1/places/{place_id}/presents/debut]
 
@@ -343,25 +303,17 @@ Action for device authentication after first application boot.
 + Parameters
     + place_id (number)
 
-+ Model (application/json)
-
-    JSON representation of present.
-
-    + Body
-
-          {
-            "id": 1,
-            "name": "Карбонара",
-            "price": "20",
-            "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
-            "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
-          }
-
 ### GET
 
 + Response 200
 
-    [Debut Present][]
+    {
+      "id": 1,
+      "name": "Карбонара",
+      "price": "20",
+      "image": "http://s1.afisha-eda.ru/Photos/150525210126-150601174518-p-O-pasta-karbonara-pasta-alla-carbonara.jpg",
+      "description": "Alla carbonara — самая, пожалуй, знаменитая итальянская подливка к пасте (не только к спагетти, но и к другим видам тоже), приготовленная по способу карбонариев. В нее входит всего три ингредиента: грудинка, яйца и тертый пармезан. "
+    }
 
 ## Shares Collection [/v1/places/{place_id}/shares]
 
@@ -370,35 +322,29 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
+
+### GET
+
++ Attributes
     + page (number, optional)
     + per_page (number, optional)
     + lng (number, optional)
     + lat (number, optional)
 
-+ Model (application/json)
-
-    JSON representation of shares.
-
-    + Body
-
-        [{
-          "id": 1,
-          "name": "СЧАСТЛИВЫЕ ЧАСЫ ПО БУДНЯМ! 1+1=1",
-          "image": "http://www.evrasia.spb.ru/public_img/1.jpg",
-          "description": "      Закажите два любых блюда в рамках одной категории: «Суши-бар», «Закуски, салаты и якитори», «Супы», «Горячие блюда, WOK и гарниры», «Десерты» - оплатите одно. Оплачивается блюдо наибольшее или равное по цене. Блюдо, наименьшее или равное по цене, вы получаете бесплатно. Заказав один напиток, второй такой же вы получаете бесплатно.\n\n      Акция не действует в праздничные дни. Акция распространяется только на блюда Евро-азиатского меню.\n\n      С другими скидками, акциями и спецпредложениями не суммируется. Действует при наличии соответствующих рекламных объявлений. Действует только для предъявителей дисконтных карт «ЕВРАЗИЯ BONUS».\n\n      Не действует на блюда Евро-азиатского меню и напитки следующих категорий: «Сэндвичи и омлеты», «Бизнес/Бенто/Азиатский-ланчи», «Детское меню», «Суши-сет конструктор», «Суши ассорти», «Супер цены на бутылки», «Спецпредложения (распродажные позиции)», «Сигаретные наборы/сигареты», «Кальяны».\n\n      Важно: акция «Счастливые часы по будням 1+1=1 с ОТКРЫТИЯ до 18:00» не действует на акцию \"Суши за 49\", «Наборы для своих» и «Азиатский ланч».\n"
-        },
-        {
-          "id": 2,
-          "name": "СУПЕР НАБОРЫ -70%!",
-          "image": "http://www.evrasia.spb.ru/public_img/134.jpg",
-          "description": "      НА ЛЮБИМЫЕ СУШИ И РОЛЛЫ В НАБОРАХ - СКИДКИ ДО 70%!\n      Акция действует только на суши и роллы в наборах, указанные в Спецменю.\n\n      Спецпредложением по Наборам может воспользоваться как гость с дисконтной картой \"Евразия Bonus\", так и без нее.\n      Для гостей с дисконтной картой \"Евразия Bonus\" действует спеццена со скидкой до 70% от базовой цены (выделена красным).\n      Для гостей без дисконтной карты \"Евразия Bonus\" предлагается спеццена со скидкой -10% от базовой цены (отмечена как \"цена без карты\").\n      Базовая цена на наборы указана в спецменю. Цены на сайте указаны уже с учетом скидок.\n\n      Полный ассортимент меню и цены суши и роллов в Наборах можно  посмотреть здесь\n\n      На данное предложение не действуют акции, в том числе акция \"Счастливые часы\".\n      Скидки по дисконтным картам \"Евразия BONUS\" не предоставляются.\n      С другими скидками, акциями и спецпредложениями не суммируется.\n      Предложение не распространяется на Наборы, приобретаемые на вынос (с собой).\n      Предложение действительно на момент предоставления Спецменю в ресторане.\n"
-        }]
-
-### GET
-
 + Response 200
 
-    [Shares Collection][]
+    [{
+      "id": 1,
+      "name": "СЧАСТЛИВЫЕ ЧАСЫ ПО БУДНЯМ! 1+1=1",
+      "image": "http://www.evrasia.spb.ru/public_img/1.jpg",
+      "description": "      Закажите два любых блюда в рамках одной категории: «Суши-бар», «Закуски, салаты и якитори», «Супы», «Горячие блюда, WOK и гарниры», «Десерты» - оплатите одно. Оплачивается блюдо наибольшее или равное по цене. Блюдо, наименьшее или равное по цене, вы получаете бесплатно. Заказав один напиток, второй такой же вы получаете бесплатно.\n\n      Акция не действует в праздничные дни. Акция распространяется только на блюда Евро-азиатского меню.\n\n      С другими скидками, акциями и спецпредложениями не суммируется. Действует при наличии соответствующих рекламных объявлений. Действует только для предъявителей дисконтных карт «ЕВРАЗИЯ BONUS».\n\n      Не действует на блюда Евро-азиатского меню и напитки следующих категорий: «Сэндвичи и омлеты», «Бизнес/Бенто/Азиатский-ланчи», «Детское меню», «Суши-сет конструктор», «Суши ассорти», «Супер цены на бутылки», «Спецпредложения (распродажные позиции)», «Сигаретные наборы/сигареты», «Кальяны».\n\n      Важно: акция «Счастливые часы по будням 1+1=1 с ОТКРЫТИЯ до 18:00» не действует на акцию \"Суши за 49\", «Наборы для своих» и «Азиатский ланч».\n"
+    },
+    {
+      "id": 2,
+      "name": "СУПЕР НАБОРЫ -70%!",
+      "image": "http://www.evrasia.spb.ru/public_img/134.jpg",
+      "description": "      НА ЛЮБИМЫЕ СУШИ И РОЛЛЫ В НАБОРАХ - СКИДКИ ДО 70%!\n      Акция действует только на суши и роллы в наборах, указанные в Спецменю.\n\n      Спецпредложением по Наборам может воспользоваться как гость с дисконтной картой \"Евразия Bonus\", так и без нее.\n      Для гостей с дисконтной картой \"Евразия Bonus\" действует спеццена со скидкой до 70% от базовой цены (выделена красным).\n      Для гостей без дисконтной карты \"Евразия Bonus\" предлагается спеццена со скидкой -10% от базовой цены (отмечена как \"цена без карты\").\n      Базовая цена на наборы указана в спецменю. Цены на сайте указаны уже с учетом скидок.\n\n      Полный ассортимент меню и цены суши и роллов в Наборах можно  посмотреть здесь\n\n      На данное предложение не действуют акции, в том числе акция \"Счастливые часы\".\n      Скидки по дисконтным картам \"Евразия BONUS\" не предоставляются.\n      С другими скидками, акциями и спецпредложениями не суммируется.\n      Предложение не распространяется на Наборы, приобретаемые на вынос (с собой).\n      Предложение действительно на момент предоставления Спецменю в ресторане.\n"
+    }]
 
 ## Menu Category Collection [/v1/places/{place_id}/menu_categories]
 
@@ -408,38 +354,30 @@ Action for device authentication after first application boot.
 + Parameters
     + place_id (number)
 
-+ Model (application/json)
-
-    JSON representation of shares.
-
-    + Body
-
-        [{
-            "id": 1,
-            "name": "Антипаста"
-        },
-        {
-            "id": 2,
-            "name": "Паста"
-        },
-        {
-            "id": 3,
-            "name": "Пицца"
-        },
-        {
-            "id": 4,
-            "name": "Десерты"
-        },
-        {
-            "id": 5,
-            "name": "Кофе и другое"
-        }]
-
 ### GET
 
 + Response 200
 
-    [Menu Category Collection][]
+    [{
+        "id": 1,
+        "name": "Антипаста"
+    },
+    {
+        "id": 2,
+        "name": "Паста"
+    },
+    {
+        "id": 3,
+        "name": "Пицца"
+    },
+    {
+        "id": 4,
+        "name": "Десерты"
+    },
+    {
+        "id": 5,
+        "name": "Кофе и другое"
+    }]
 
 ## Menu Item Collection [/v1/menu_categories/{menu_category_id}/menu_items]
 
@@ -448,61 +386,55 @@ Action for device authentication after first application boot.
 
 + Parameters
     + menu_category_id (number)
-    + page (number, optional)
-    + per_page (number, optional)
-
-+ Model (application/json)
-
-    JSON representation of menu item collection.
-
-    + Body
-
-        [{
-            "id": 1,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 2,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 3,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 4,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 5,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-        }]
 
 ### GET
 
++ Attributes
+    + page (number, optional)
+    + per_page (number, optional)
+
 + Response 200
 
-    [Menu Item Collection][]
+    [{
+        "id": 1,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 2,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 3,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 4,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 5,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+    }]
 
 ## Menu Item Collection by place [/v1/places/{place_id}/menu_items]
 
@@ -511,62 +443,56 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
+
+### GET
+
++ Attributes
     + day_item (boolean, optional)
     + page (number, optional)
     + per_page (number, optional)
 
-+ Model (application/json)
-
-    JSON representation of menu item collection.
-
-    + Body
-
-        [{
-            "id": 1,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 2,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 3,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 4,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-          },
-          {
-            "id": 5,
-            "name": "Паста Песто",
-            "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-            "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-            "price": 65,
-            "bonus": 7
-        }]
-
-### GET
-
 + Response 200
 
-    [Menu Item Collection by place][]
+    [{
+        "id": 1,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 2,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 3,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 4,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+      },
+      {
+        "id": 5,
+        "name": "Паста Песто",
+        "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+        "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+        "price": 65,
+        "bonus": 7
+    }]
 
 ## Menu Item [/v1/menu_items/{id}/]
 
@@ -576,26 +502,18 @@ Action for device authentication after first application boot.
 + Parameters
     + id (number)
 
-+ Model (application/json)
-
-    JSON representation of menu item.
-
-    + Body
-
-        {
-          "id": 1,
-          "name": "Паста Песто",
-          "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
-          "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
-          "price": 65,
-          "bonus": 7
-        }
-
 ### GET
 
 + Response 200
 
-    [Menu Item][]
+    {
+      "id": 1,
+      "name": "Паста Песто",
+      "description": "Соус Песто, зроблений власноруч, з базиліком та кедровими горішками.",
+      "image": "http://italy4.me/wp-content/uploads/2015/02/pasta-s-pesto.jpg",
+      "price": 65,
+      "bonus": 7
+    }
 
 ## Feedback Collection [/v1/places/{place_id}/feedbacks]
 
@@ -604,36 +522,31 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
-    + page (number, optional)
-    + per_page (number, optional)
-
-+ Model (application/json)
-
-    JSON representation of feedbacks.
-
-    + Body
-
-        [{
-            "id": 1,
-            "content": "Some feedback content",
-            "image": null,
-            "stars": 3,
-            "created_at": 1471398012
-            "user": {
-              "id": 9,
-              "first_name": "Alex",
-              "last_name": "Beznos",
-              "photo": null
-            }
-        }]
 
 ### GET
 
++ Attributes
+    + page (number, optional)
+    + per_page (number, optional)
+
 + Response 200
 
-    [Feedback Collection][]
+    [{
+        "id": 1,
+        "content": "Some feedback content",
+        "image": null,
+        "stars": 3,
+        "created_at": 1471398012
+        "user": {
+          "id": 9,
+          "first_name": "Alex",
+          "last_name": "Beznos",
+          "photo": null
+        }
+    }]
 
 ### POST
+
 + Attributes
     + content (string, required)
     + image (image)
@@ -664,10 +577,9 @@ Action for device authentication after first application boot.
 
 + Parameters
     + place_id (number)
-    + page (number, optional)
-    + per_page (number, optional)
 
 ### POST
+
 + Attributes
     + uuid (array, required)
     + qr (string, required)
@@ -695,6 +607,10 @@ Action for device authentication after first application boot.
 + Response 200
 
 ### GET
+
++ Attributes
+    + page (number, optional)
+    + per_page (number, optional)
 
 + Response 200
 
