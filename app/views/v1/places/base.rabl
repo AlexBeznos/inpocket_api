@@ -1,6 +1,6 @@
 attributes :id, :description, :name, :lng, :lat,
            :color, :in_pocket, :category, :address,
-           :phone, :working_hours, :working_hours_decorated,
+           :phones, :working_hours, :working_hours_decorated,
            :site, :category
 
 node :color_rgb do |pl|

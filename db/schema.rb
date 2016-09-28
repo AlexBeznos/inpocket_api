@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927214751) do
+ActiveRecord::Schema.define(version: 20160928113402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,14 @@ ActiveRecord::Schema.define(version: 20160927214751) do
     t.integer  "pos_terminal_id"
     t.index ["pos_terminal_id", "pos_terminal_type"], name: "index_places_on_pos_terminal_id_and_pos_terminal_type", unique: true, using: :btree
     t.index ["pos_terminal_type", "pos_terminal_id"], name: "index_places_on_pos_terminal_type_and_pos_terminal_id", using: :btree
+  end
+
+  create_table "pos_terminal_posters", force: :cascade do |t|
+    t.string   "account"
+    t.string   "access_token"
+    t.integer  "waiter_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "presents", force: :cascade do |t|
