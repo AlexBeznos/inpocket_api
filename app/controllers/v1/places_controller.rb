@@ -3,6 +3,7 @@ module V1
     def index
       @places = Place.filter(params.slice(:uuid))
                      .paginated(params)
+                     .decorate
 
       respond_with @places
     end
