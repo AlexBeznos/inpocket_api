@@ -20,7 +20,7 @@ class Place < ApplicationRecord
   # belongs_to :pos_terminal, polymorphic: true, dependent: :destroy
 
   scope :by_uuid, -> (uuid) { joins(:beacons).where("beacons.uuid in (?)", uuid) }
-  scope :by_category_id, -> (id) { where(category_record_id: id) }
+  scope :by_category_id, -> (id) { where(category_record_id: id.split(',')) }
 
   geocoded_by :address, latitude: :lat, longitude: :lng
 
