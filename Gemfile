@@ -8,6 +8,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'puma-heroku'
 
+gem 'sidekiq'
 gem 'geocoder'
 gem 'default_value_for'
 gem 'rabl-rails'

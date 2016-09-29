@@ -2,6 +2,11 @@ version: '2'
 services:
   db:
     image: postgres
+  redis:
+    image: redis
+    command: redis-server
+    ports:
+      - "6379:6379"
 
   web:
     build: .
@@ -13,6 +18,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - redis
 
 volumes:
   bundle: {}
