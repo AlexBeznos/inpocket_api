@@ -5,7 +5,7 @@ module V1
       @auth.current_user = current_user
 
       if @auth.save
-        render nothing: true, status: :ok
+        head :ok
       else
         record_invalid @auth.errors
       end

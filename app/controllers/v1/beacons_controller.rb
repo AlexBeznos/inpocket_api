@@ -2,7 +2,7 @@ module V1
   class BeaconsController < ApplicationController
 
     def index
-      @beacons = Place.find(params[:place_id]).beacons
+      @beacons = Beacon.filter(params.slice(:place_id))
 
       respond_with @beacons
     end

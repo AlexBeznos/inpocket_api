@@ -9,11 +9,8 @@ module V1
     end
 
     def show
-      @present = if params[:id] == 'debut'
-        Present.where(place_id: params[:place_id]).find_by(debut: true)
-      else
-        Present.find(params[:debut])
-      end
+      @present = Present.filter(params.slice(:place_id))
+                        .find(params[:id])
 
       respond_with @present
     end

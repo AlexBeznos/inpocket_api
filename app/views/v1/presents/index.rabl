@@ -1,9 +1,5 @@
 collection @presents
-attributes :id, :name, :price, :description
-
-node :image do |pr|
-  pr.image.url
-end
+extends 'v1/presents/base'
 
 node :distance do
   2.3

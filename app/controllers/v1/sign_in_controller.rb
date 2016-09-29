@@ -5,7 +5,7 @@ module V1
       @auth.current_device = current_device
 
       if @auth.save
-        render nothing: true, status: :ok
+        head :ok
       else
         record_invalid @auth.errors
       end

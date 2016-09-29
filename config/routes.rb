@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :shares, only: [:index]
     resources :places, only: [:index, :show] do
       resources :beacons, only: [:index]
+      get 'presents/debut', to: 'debut_presents#show'
       resources :presents, only: [:index, :show]
       resources :feedbacks, only: [:index, :create]
       resources :shares, only: [:index]
