@@ -140,6 +140,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multipart-post (2.0.0)
+    newrelic_rpm (3.16.3.323)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   geocoder
   kaminari
   listen (~> 3.0.5)
+  newrelic_rpm
   oj
   pg (~> 0.18)
   poster_api!

@@ -17,6 +17,7 @@ gem 'oj'
 gem 'responders'
 gem 'kaminari'
 gem 'email_validator'
+gem 'newrelic_rpm'
 
 gem 'activemodel-serializers-xml'
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
