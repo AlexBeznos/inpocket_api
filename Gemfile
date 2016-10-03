@@ -9,6 +9,7 @@ gem 'puma', '~> 3.0'
 gem 'puma-heroku'
 
 gem 'sidekiq'
+gem 'sidekiq-superworker'
 gem 'geocoder'
 gem 'default_value_for'
 gem 'rabl-rails'

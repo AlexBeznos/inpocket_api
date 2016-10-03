@@ -13,7 +13,7 @@ class PlaceDecorator < Draper::Decorator
 
   def currect_user_score
     user_score = user_scores.find_by(user: @current_user)
-    user_score.try(:score) || 0
+    user_score.try(:bonus) || 0
   end
 
   def category
