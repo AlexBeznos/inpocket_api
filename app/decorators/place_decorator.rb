@@ -11,8 +11,8 @@ class PlaceDecorator < Draper::Decorator
     photos.map { |ph| ph.image.url }
   end
 
-  def currect_user_score
-    user_score = user_scores.find_by(user: @current_user)
+  def currect_user_score(user)
+    user_score = user_scores.find_by(user: user)
     user_score.try(:bonus) || 0
   end
 

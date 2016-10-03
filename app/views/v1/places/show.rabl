@@ -6,5 +6,5 @@ node :is_present_received do |place|
 end
 
 node :score do |place|
-  place.currect_user_score
+  place.currect_user_score(@current_user)
 end
