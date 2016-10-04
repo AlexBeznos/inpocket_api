@@ -12,7 +12,11 @@ class PlaceDecorator < Draper::Decorator
   end
 
   def currect_user_score(user)
+    p '_+_+_++_+_'
+    p 'should be current score'
     user_score = user_scores.find_by(user: user)
+    p user_score
+    raise unless user_score.try(:bonus)
     user_score.try(:bonus) || 0
   end
 
