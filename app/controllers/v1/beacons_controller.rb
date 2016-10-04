@@ -3,8 +3,6 @@ module V1
 
     def index
       @beacons = Beacon.filter(params.slice(:place_id))
-
-      respond_with @beacons
     end
   end
 end

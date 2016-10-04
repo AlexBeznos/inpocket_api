@@ -4,8 +4,6 @@ module V1
 
     def index
       @feedbacks = Feedback.where(place: @place).paginated(params)
-
-      respond_with @feedbacks
     end
 
     def create
@@ -13,9 +11,7 @@ module V1
       @feedback.place = @place
       @feedback.user = @current_user
 
-      if @feedback.save
-        respond_with @feedback
-      else
+      unless @feedback.save
         record_invalid @feedback.errors
       end
     end

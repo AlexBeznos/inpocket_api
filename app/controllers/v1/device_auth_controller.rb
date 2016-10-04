@@ -5,9 +5,7 @@ module V1
     def create
       @auth = DeviceAuthService.new(auth_params)
 
-      if @auth.save
-        respond_with @auth.device
-      else
+      unless @auth.save
         record_invalid @auth.errors
       end
     end
