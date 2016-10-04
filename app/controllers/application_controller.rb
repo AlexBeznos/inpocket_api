@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::ParameterMissing, with: :parameter_missing
 
-  respond_to :json
-
   protected
 
   def record_invalid(errors)
