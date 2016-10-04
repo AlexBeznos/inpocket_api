@@ -14,7 +14,9 @@ module V1
                     .find(params[:id])
                     .decorate
 
-      respond_with @place
+      if stale?(last_modified: Time.now.utc)
+        respond_with @place
+      end
     end
   end
 end
