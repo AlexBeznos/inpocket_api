@@ -4,7 +4,8 @@ class OrderService
   extend ActiveModel::Naming
 
   attr_accessor :qr, :uuids, :lat, :lng, :goods, :place, :user,
-                :present_ids, :menu_item_ids, :decorated_menu_items
+                :present_ids, :menu_item_ids, :decorated_menu_items,
+                :decorated_presents
 
   validates :qr, :uuids, :lat, :lng, :goods, presence: true
 
@@ -14,12 +15,14 @@ class OrderService
     end
 
     init_goods
-    init_decorated_items
+    init_decorate_items
+    init_decorate_presents
   end
 
   def save
     order = save_order
     save_presents_for order
+    decrease_bonuses
     save_menu_items_for order
   end
 
@@ -37,6 +40,12 @@ class OrderService
     present_ids.each do |present|
       OrderPresent.create!(order: order, present_id: present)
     end
+  end
+
+  def decrease_bonuses
+    number_of_bonuses = decorated_presents.map(&:price).inject(0, &:+)
+    score             = place.user_scores.find_by(user: user)
+    score.update(bonus: score.bonus - number_of_bonuses)
   end
 
   def save_menu_items_for(order)
@@ -58,9 +67,15 @@ class OrderService
     end
   end
 
-  def init_decorated_items
+  def init_decorate_items
     items = MenuItem.includes(menu_category: :place).where(id: menu_item_ids)
     items_array = menu_item_ids.map {|id| items.find {|item| item.id == id}}
     self.decorated_menu_items = MenuItemDecorator.decorate_collection(items_array)
+  end
+
+  def init_decorate_presents
+    presents = Present.where(id: present_ids)
+    presents_arr = present_ids.map {|id| presents.find {|item| item.id == id}}
+    self.decorated_presents = presents_arr
   end
 end
