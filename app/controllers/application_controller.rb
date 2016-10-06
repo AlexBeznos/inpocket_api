@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   include Authenticatable
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found

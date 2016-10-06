@@ -15,15 +15,13 @@ GIT
       oj
 
 GIT
-  remote: git://github.com/audionerd/draper.git
-  revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
-  branch: rails5
+  remote: git://github.com/AlexBeznos/rabl-rails.git
+  revision: f5bc0da89b019a2879824509ebea9bbf04363e34
   specs:
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
+    rabl-rails (0.4.3)
+      activesupport (>= 3.1)
+      railties (>= 3.1)
+      thread_safe (~> 0.3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -96,6 +94,12 @@ GEM
     default_value_for (3.0.2)
       activerecord (>= 3.2.0, < 5.1)
     diff-lcs (1.2.5)
+    draper (3.0.0.pre1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
@@ -138,7 +142,7 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multipart-post (2.0.0)
     newrelic_rpm (3.16.3.323)
     nio4r (1.2.1)
@@ -153,10 +157,6 @@ GEM
       puma (~> 3.0)
     rabl (0.13.0)
       activesupport (>= 2.3.14)
-    rabl-rails (0.4.3)
-      activesupport (>= 3.1)
-      railties (>= 3.1)
-      thread_safe (~> 0.3.1)
     rack (2.0.1)
     rack-attack (4.4.1)
       rack
@@ -248,7 +248,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemodel-serializers-xml
   bcrypt (~> 3.1.7)
   byebug
   carrierwave
@@ -256,7 +255,7 @@ DEPENDENCIES
   carrierwave-base64!
   database_cleaner
   default_value_for
-  draper!
+  draper (>= 3.0.0.pre1)
   email_validator
   exception_notification
   factory_girl_rails
@@ -273,7 +272,7 @@ DEPENDENCIES
   puma (~> 3.0)
   puma-heroku
   rabl
-  rabl-rails
+  rabl-rails!
   rack-attack
   rack-cors
   rack-health
