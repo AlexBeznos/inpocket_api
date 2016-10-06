@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004090450) do
+ActiveRecord::Schema.define(version: 20161006081212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161004090450) do
   end
 
   create_table "facebook_profiles", force: :cascade do |t|
-    t.integer  "uid"
+    t.bigint   "uid"
     t.string   "email"
     t.integer  "gender"
     t.string   "username"
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(version: 20161004090450) do
   end
 
   create_table "vk_profiles", force: :cascade do |t|
-    t.integer  "uid"
+    t.bigint   "uid"
     t.string   "email"
     t.integer  "gender"
     t.string   "username"
