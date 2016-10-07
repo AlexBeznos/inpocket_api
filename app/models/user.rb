@@ -22,4 +22,43 @@ class User < ApplicationRecord
     end
   end
 
+  def update_with_networks(params)
+    vk_profile_params = params.delete(:vk_profile)
+    facebook_profile_params = params.delete(:facebook_profile)
+
+    self.update(params) && update_vk_profile(vk_profile_params) && update_facebook_profile(facebook_profile_params)
+  end
+
+  private
+
+  def update_vk_profile(params)
+    return true unless params
+    ActiveRecord::Base.transaction do
+      self.vk_profile.try(:destroy)
+      vk_profile = VkProfile.new(params)
+      vk_profile.user = self
+
+      unless vk_profile.save
+        self.errors.add(:vk_profile, vk_profile.errors)
+      end
+
+      !self.errors.any?
+    end
+  end
+
+  def update_facebook_profile(params)
+    return true unless params
+    ActiveRecord::Base.transaction do
+      self.facebook_profile.try(:destroy)
+      facebook_profile = FacebookProfile.new(params)
+      facebook_profile.user = self
+
+      unless facebook_profile.save
+        self.errors.add(:facebook_profile, facebook_profile.errors)
+      end
+
+      !self.errors.any?
+    end
+  end
+
 end

@@ -7,7 +7,7 @@ module V1
     def update
       @user = current_user
 
-      if @user.update(user_params)
+      if @user.update_with_networks(user_params)
         head :ok
       else
         record_invalid @user.errors
@@ -17,7 +17,11 @@ module V1
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :photo, :password, :email, :current_password)
+      params.require(:user).permit(
+        :first_name, :last_name, :photo, :password, :email, :current_password,
+        vk_profile: [:username, :email, :uid, :gender, :birthday],
+        facebook_profile: [:username, :email, :uid, :gender, :birthday]
+      )
     end
   end
 end
