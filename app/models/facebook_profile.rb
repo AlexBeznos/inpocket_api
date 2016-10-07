@@ -3,7 +3,7 @@ class FacebookProfile < ApplicationRecord
 
   enum gender: ['male', 'female']
 
-  validates :uid, :email, :gender, :username, presence: true
+  validates :uid, :gender, :username, presence: true
   validates :uid, uniqueness: true
-  validates :email, email: true
+  validates :email, email: true, allow_blank: true, allow_nil: true
 end

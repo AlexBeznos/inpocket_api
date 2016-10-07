@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :current_password
+  attr_accessor :current_password, :provider
   has_secure_password validations: false
   mount_base64_uploader :photo, BaseUploader
 
@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_one :vk_profile, dependent: :destroy
 
   with_options if: :signed do |user|
-    user.validates :email, presence: true
-    user.validates :email, email: true, allow_blank: true
+    user.validates :email, presence: true, unless: -> (u) { u.provider && ['vk', 'facebool'].include?(u.provider) }
+    user.validates :email, email: true, allow_blank: true, allow_nil: true
   end
 
   validate :update_current_password, on: :update,
