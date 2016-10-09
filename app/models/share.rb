@@ -8,7 +8,7 @@ class Share < ApplicationRecord
     where(place_id: place_id )
   }
   scope :by_places_exclusion, -> (place_ids) {
-    not.where(place_id: place_ids.split(',') )
+    where.not(place_id: place_ids.split(',') )
   }
 
   belongs_to :place
