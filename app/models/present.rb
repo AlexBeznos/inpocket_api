@@ -10,6 +10,9 @@ class Present < ApplicationRecord
   scope :by_place_id, -> (place_id) {
     where(place_id: place_id )
   }
+  scope :by_places_exclusion, -> (place_ids) {
+    not.where(place_id: place_ids.split(',') )
+  }
 
   validates :name, :description, :image, :price, presence: true
 

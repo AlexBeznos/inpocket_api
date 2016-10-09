@@ -21,6 +21,7 @@ class Place < ApplicationRecord
 
   scope :by_uuid, -> (uuid) { joins(:beacons).where("beacons.uuid in (?)", uuid) }
   scope :by_category_id, -> (id) { where(category_record_id: id.split(',')) }
+  scope :by_places_exclusion, -> (ids) { not.where(id: ids.split(',')) }
 
   geocoded_by :address, latitude: :lat, longitude: :lng
 
