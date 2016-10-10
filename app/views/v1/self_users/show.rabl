@@ -7,9 +7,9 @@ node :with_changable_password do |u|
 end
 
 child :facebook_profile do
-  attributes :username
+  attributes :username, :id
 end
 
 child :vk_profile do
-  attributes :username
+  attributes :username, :id
 end

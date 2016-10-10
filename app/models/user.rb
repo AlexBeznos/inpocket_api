@@ -16,10 +16,17 @@ class User < ApplicationRecord
   validate :update_current_password, on: :update,
     if: -> (u) { u.password_digest_changed? && u.password_digest_was != '' }
 
+  before_create :set_referal
+
   def update_current_password
     if !current_password || !User.find(id).authenticate(current_password)
       errors.add(:current_password, 'should be valid')
     end
+  end
+
+  def set_referal
+    self.referal_number = SecureRandom.random_number.to_s.split('.').last.first(6)
+    set_referal if User.where(referal_number: referal_number).any?
   end
 
   def update_with_networks(params)

@@ -99,6 +99,7 @@ Action for device authentication after first application boot.
         "id": 44,
         "first_name": null,
         "last_name": null,
+        "referal_number": "421339",
         "photo": null,
         "signed": false,
         "facebook_profile": {
@@ -797,3 +798,23 @@ Action for device authentication after first application boot.
         "color_hex": "#F44336"
       }
     }]
+
+## Referals Collection [/v1/referals]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
+### POST
+
++ Attributes
+    + number (string, required)
+
++ Request (application/json)
+
+    {
+        "referal": {
+            "number":"123123"
+        }
+    }
+
++ Response 200

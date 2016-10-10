@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :cards, only: :index
     resources :presents, only: [:index]
     resources :shares, only: [:index]
+    resources :referals, only: [:create]
     resources :places, only: [:index, :show] do
       resources :beacons, only: [:index]
       get 'presents/debut', to: 'debut_presents#show'

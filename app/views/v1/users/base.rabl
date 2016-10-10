@@ -1,4 +1,4 @@
-attributes :id
+attributes :id, :referal_number
 
 node :photo do |u|
   u.photo.url
