@@ -9,7 +9,10 @@ class User < ApplicationRecord
   has_one :vk_profile, dependent: :destroy
 
   with_options if: :signed do |user|
-    user.validates :email, presence: true, unless: -> (u) { u.provider && ['vk', 'facebool'].include?(u.provider) }
+    user.validates :email, presence: true, unless: -> (u) {
+      u.vk_profile || u.facebook_profile ||
+      (u.provider && ['vk', 'facebool'].include?(u.provider))
+    }
     user.validates :email, email: true, allow_blank: true, allow_nil: true
   end
 
