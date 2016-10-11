@@ -2,7 +2,7 @@ module V1
   class ReferalsController < ApplicationController
     def create
       errors = {}
-      errors.merge!({user: 'not exist'}) if User.where(referal_number: referal_params[:number])
+      errors.merge!({user: 'not exist'}) unless User.find_by(referal_number: referal_params[:number])
       errors.merge!({user: 'self referal can\'t be used'}) if current_user.referal_number == referal_params[:number]
 
       if errors.empty?
