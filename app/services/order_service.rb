@@ -22,7 +22,7 @@ class OrderService
   def save
     order = save_order
     save_presents_for order
-    decrease_bonuses
+    decrease_bonuses if decorated_presents.any?
     save_menu_items_for order
   end
 
