@@ -149,6 +149,8 @@ Action for device authentication after first application boot.
     + uuid (string, optional)
     + category_id (number, optional)
     + places_exclusion (number, optional)
+    + per_page (number, optional)
+    + page (number, optional)
 
 + Response 200
 
@@ -239,7 +241,6 @@ Action for device authentication after first application boot.
 + Attributes
     + per_page (number, optional)
     + page (number, optional)
-    + place_id (number, optional)
     + places_exclusion (number, optional)
     + lng (number, optional)
     + lat (number, optional)
@@ -347,6 +348,35 @@ Action for device authentication after first application boot.
 + Attributes
     + page (number, optional)
     + per_page (number, optional)
+    + places_exclusion (number, optional)
+    + lng (number, optional)
+    + lat (number, optional)
+
++ Response 200
+
+    [{
+      "id": 1,
+      "name": "СЧАСТЛИВЫЕ ЧАСЫ ПО БУДНЯМ! 1+1=1",
+      "image": "http://www.evrasia.spb.ru/public_img/1.jpg",
+      "description": "      Закажите два любых блюда в рамках одной категории: «Суши-бар», «Закуски, салаты и якитори», «Супы», «Горячие блюда, WOK и гарниры», «Десерты» - оплатите одно. Оплачивается блюдо наибольшее или равное по цене. Блюдо, наименьшее или равное по цене, вы получаете бесплатно. Заказав один напиток, второй такой же вы получаете бесплатно.\n\n      Акция не действует в праздничные дни. Акция распространяется только на блюда Евро-азиатского меню.\n\n      С другими скидками, акциями и спецпредложениями не суммируется. Действует при наличии соответствующих рекламных объявлений. Действует только для предъявителей дисконтных карт «ЕВРАЗИЯ BONUS».\n\n      Не действует на блюда Евро-азиатского меню и напитки следующих категорий: «Сэндвичи и омлеты», «Бизнес/Бенто/Азиатский-ланчи», «Детское меню», «Суши-сет конструктор», «Суши ассорти», «Супер цены на бутылки», «Спецпредложения (распродажные позиции)», «Сигаретные наборы/сигареты», «Кальяны».\n\n      Важно: акция «Счастливые часы по будням 1+1=1 с ОТКРЫТИЯ до 18:00» не действует на акцию \"Суши за 49\", «Наборы для своих» и «Азиатский ланч».\n"
+    },
+    {
+      "id": 2,
+      "name": "СУПЕР НАБОРЫ -70%!",
+      "image": "http://www.evrasia.spb.ru/public_img/134.jpg",
+      "description": "      НА ЛЮБИМЫЕ СУШИ И РОЛЛЫ В НАБОРАХ - СКИДКИ ДО 70%!\n      Акция действует только на суши и роллы в наборах, указанные в Спецменю.\n\n      Спецпредложением по Наборам может воспользоваться как гость с дисконтной картой \"Евразия Bonus\", так и без нее.\n      Для гостей с дисконтной картой \"Евразия Bonus\" действует спеццена со скидкой до 70% от базовой цены (выделена красным).\n      Для гостей без дисконтной карты \"Евразия Bonus\" предлагается спеццена со скидкой -10% от базовой цены (отмечена как \"цена без карты\").\n      Базовая цена на наборы указана в спецменю. Цены на сайте указаны уже с учетом скидок.\n\n      Полный ассортимент меню и цены суши и роллов в Наборах можно  посмотреть здесь\n\n      На данное предложение не действуют акции, в том числе акция \"Счастливые часы\".\n      Скидки по дисконтным картам \"Евразия BONUS\" не предоставляются.\n      С другими скидками, акциями и спецпредложениями не суммируется.\n      Предложение не распространяется на Наборы, приобретаемые на вынос (с собой).\n      Предложение действительно на момент предоставления Спецменю в ресторане.\n"
+    }]
+
+## Shares Collection without place [/v1/shares]
+
++ Headers
+    Authorization: Token token=Vbh4MWHxRswf7zvnyRV31Gfc
+
+### GET
+
++ Attributes
+    + page (number, optional)
+    + per_page (number, optional)
     + place_id (number, optional)
     + places_exclusion (number, optional)
     + lng (number, optional)
@@ -411,6 +441,7 @@ Action for device authentication after first application boot.
 ### GET
 
 + Attributes
+    + up_sale (boolean, optional)
     + page (number, optional)
     + per_page (number, optional)
 
@@ -468,6 +499,7 @@ Action for device authentication after first application boot.
 ### GET
 
 + Attributes
+    + up_sale (boolean, optional)
     + day_item (boolean, optional)
     + page (number, optional)
     + per_page (number, optional)
