@@ -11,6 +11,5 @@ WORKDIR $app
 RUN gem install bundler
 ENV BUNDLE_PATH /bundle
 
-
 WORKDIR $app
 COPY . ./
